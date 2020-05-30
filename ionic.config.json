@@ -1,0 +1,7 @@
+{
+  "name": "redcross",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
