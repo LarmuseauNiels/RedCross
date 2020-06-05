@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row>
+      <ion-text>
+        <h3>Please fill in your information</h3>
+      </ion-text>
+    </ion-row>
+
+    <ion-row>    
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>Gender</ion-label>
+          <ion-select interface="popover">
+            <ion-select-option *ngFor="let gender of genders">{{ gender.text }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>    
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>Age</ion-label>
+          <ion-select interface="popover">
+            <ion-select-option *ngFor="let age of ages">{{ age.text }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>    
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>Education</ion-label>
+          <ion-select interface="popover" lines="none">
+            <ion-select-option lines="none" *ngFor="let level of educationLevels">{{ level.text }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item lines="none">
+            First Aid Training
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label class="ion-text-wrap">I have previously received a First Aid training </ion-label>
+            <ion-checkbox slot="end" (ionChange)="changed($event.detail.checked)" [(ngModel)]="hasFollowedFirstAidTraining" ></ion-checkbox>
+          </ion-item>
+          <ion-item lines="none" disabled={{!hasFollowedFirstAidTraining}}>
+            <ion-label class="ion-text-wrap">How many times did you receive first aid training?</ion-label>
+            <ion-input class='align-right' type="number" ></ion-input>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+
+</ion-content>
