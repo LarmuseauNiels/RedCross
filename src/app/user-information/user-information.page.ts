@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInformationPage implements OnInit {
 
+  //Is to give an example, should come from database?
   genders: any[] = [
     {
       id: 1,
@@ -22,7 +23,7 @@ export class UserInformationPage implements OnInit {
     },
 
   ]
-  
+
   ages: any[] = [
     {
       id: 1,
@@ -57,15 +58,32 @@ export class UserInformationPage implements OnInit {
     }
   ]
 
-  hasFollowedFirstAidTraining:boolean;
+  gender: number;
+  age: number;
+  education: number;
+  hasFollowedFirstAidTraining: boolean;
+  amountOfTrainings: number;
+  hasFollewedTrainingsWithRedCross: boolean;
+  otherProvider:string;
+  firstAidBlendedLearningTraining:boolean;
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  changed(detail) {
+  //This was mainly to test.
+  NextPage() {
+    console.log(this.gender);
+    console.log(this.age);
+    console.log(this.education);
     console.log(this.hasFollowedFirstAidTraining);
+    console.log(this.amountOfTrainings);
+    console.log(this.hasFollewedTrainingsWithRedCross);
+    console.log(this.otherProvider);
+    console.log(this.firstAidBlendedLearningTraining);
+
   }
 
 }

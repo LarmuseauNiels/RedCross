@@ -16,9 +16,9 @@
     <ion-row>    
       <ion-col>
         <ion-item lines="none">
-          <ion-label>Gender</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option *ngFor="let gender of genders">{{ gender.text }}</ion-select-option>
+          <ion-label class="bold-text">Gender</ion-label>
+          <ion-select interface="popover" [(ngModel)]="gender">
+            <ion-select-option *ngFor="let gender of genders" value="{{gender.id}}">{{ gender.text }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -27,9 +27,9 @@
     <ion-row>    
       <ion-col>
         <ion-item lines="none">
-          <ion-label>Age</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option *ngFor="let age of ages">{{ age.text }}</ion-select-option>
+          <ion-label class="bold-text">Age</ion-label>
+          <ion-select interface="popover" [(ngModel)]="age">
+            <ion-select-option *ngFor="let age of ages" value="{{age.id}}">{{ age.text }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -38,9 +38,9 @@
     <ion-row>    
       <ion-col>
         <ion-item lines="none">
-          <ion-label>Education</ion-label>
-          <ion-select interface="popover" lines="none">
-            <ion-select-option lines="none" *ngFor="let level of educationLevels">{{ level.text }}</ion-select-option>
+          <ion-label class="bold-text">Education</ion-label>
+          <ion-select interface="popover" [(ngModel)]="education">
+            <ion-select-option lines="none" *ngFor="let level of educationLevels" value="{{level.id}}">{{ level.text }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -49,22 +49,44 @@
     <ion-row>
       <ion-col>
         <ion-list>
-          <ion-item lines="none">
+          <ion-item lines="none" class="bold-text">
             First Aid Training
           </ion-item>
+
           <ion-item lines="none">
             <ion-label class="ion-text-wrap">I have previously received a First Aid training </ion-label>
-            <ion-checkbox slot="end" (ionChange)="changed($event.detail.checked)" [(ngModel)]="hasFollowedFirstAidTraining" ></ion-checkbox>
+            <ion-checkbox slot="end" [(ngModel)]="hasFollowedFirstAidTraining" ></ion-checkbox>
           </ion-item>
-          <ion-item lines="none" disabled={{!hasFollowedFirstAidTraining}}>
+          
+          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining">
             <ion-label class="ion-text-wrap">How many times did you receive first aid training?</ion-label>
-            <ion-input class='align-right' type="number" ></ion-input>
+            <ion-input class='right-underlined' type="number" required [(ngModel)]="amountOfTrainings" ></ion-input>
           </ion-item>
+          
+          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining">
+            <ion-label class="ion-text-wrap">Some of these trainings were provided by the Red Cross</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="hasFollewedTrainingsWithRedCross"></ion-checkbox>
+          </ion-item>
+          
+          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining && hasFollewedTrainingsWithRedCross">
+            <ion-label class="ion-text-wrap">Some of these trainings were First Aid Blended Learning training</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="firstAidBlendedLearningTraining"></ion-checkbox>
+          </ion-item>
+          
+          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining && !hasFollewedTrainingsWithRedCross">
+            <ion-label class="ion-text-wrap">Who was the other provider?</ion-label>
+            <ion-input class='right-underlined' type="text" [(ngModel)]="otherProvider" ></ion-input>
+          </ion-item>
+        
         </ion-list>
-
       </ion-col>
     </ion-row>
 
+    <ion-row>
+      <ion-col>
+        <ion-button class="float-right" (click)="NextPage()">Next page</ion-button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
 

@@ -33,6 +33,18 @@
     color: black;
 }
 
-.align-right {
+.right-underlined {
     text-align: right;
+    border-bottom: 3px solid lightgray;
 }
+
+.bold-text {
+    font-weight: bold;
+}
+
+.float-right {
+    float: right;
+}
+
+
+
