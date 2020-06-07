@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-information',
+  selector: 'rc-user-information',
   templateUrl: './user-information.page.html',
   styleUrls: ['./user-information.page.scss'],
 })
@@ -68,7 +69,7 @@ export class UserInformationPage implements OnInit {
   firstAidBlendedLearningTraining:boolean;
 
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
@@ -83,7 +84,14 @@ export class UserInformationPage implements OnInit {
     console.log(this.hasFollewedTrainingsWithRedCross);
     console.log(this.otherProvider);
     console.log(this.firstAidBlendedLearningTraining);
+  }
 
+  prev(){
+    this.router.navigate(['/start']);
+  }
+
+  next(){
+    this.router.navigate(['/page2']);
   }
 
 }

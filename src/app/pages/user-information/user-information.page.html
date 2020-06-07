@@ -77,16 +77,10 @@
         </ion-list>
       </ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button class="float-right" (click)="NextPage()">Next page</ion-button>
-      </ion-col>
-    </ion-row>
   </ion-grid>
 
 
 
 </ion-content>
 
-<rc-navigator></rc-navigator>
+<rc-navigator currentPage="1" (prev)="prev()" (next)="next()"></rc-navigator>

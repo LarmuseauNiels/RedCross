@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { NavigationDot } from './navigationDot.model';
 
 @Component({
@@ -17,7 +17,7 @@ export class NavigatorComponent {
   dots: NavigationDot[] = [];
   totalPages: number = 6;
 
-  get currentPager(): number {
+  get currentPage(): number {
     return this._currentPage;
   }
 
@@ -25,10 +25,13 @@ export class NavigatorComponent {
     this._currentPage = value;
     this.dots.forEach(element => {
       element.selected = false;
-      if(element.page === value) {
+      if(element.page == value) {
         element.selected = true;
       }
     });
+    console.log(this.dots)
   }
 
+  @Output() public prev = new EventEmitter<any>();
+  @Output() public next = new EventEmitter<any>();
 }
