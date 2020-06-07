@@ -1,7 +1,12 @@
+
 <rc-header></rc-header>
 
 <ion-content>
-  <p>Map</p>
+  <ion-text>
+    <h3>Where did you apply first aid.</h3>
+  </ion-text>
+
+  <div #mapElement class="map"></div>
 </ion-content>
 
 <rc-navigator currentPage="2" (prev)="prev()" (next)="next()"></rc-navigator>
