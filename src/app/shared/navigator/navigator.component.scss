@@ -1,0 +1,21 @@
+:host {
+  background-color: white;
+}
+
+ion-button {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 600;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto 4px;
+}
+
+.dot-selected {
+  background-color: var(--rc-red);
+}
