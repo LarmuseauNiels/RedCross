@@ -7,6 +7,17 @@
   </ion-text>
 
   <div #mapElement class="map"></div>
+
+  <div class="map-wrapper">      
+    <div #mapElement id="map"></div>
+  </div>
+  
+  <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="UpdateSearchResults()" placeholder="Search for a place"  (ionClear)="ClearAutocomplete()"></ion-searchbar>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectSearchResult(item)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <rc-navigator currentPage="2" (prev)="prev()" (next)="next()"></rc-navigator>

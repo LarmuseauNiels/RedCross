@@ -5,7 +5,6 @@ import { HeaderComponent } from './header/header.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { CommonModule } from '@angular/common';
 
-import { Geolocation } from '@ionic-native/geolocation/ngx'
 @NgModule({
   imports: [
     IonicModule,
@@ -18,9 +17,6 @@ import { Geolocation } from '@ionic-native/geolocation/ngx'
   exports: [
     HeaderComponent,
     NavigatorComponent
-  ],
-  providers: [
-    Geolocation
   ]
 })
 export class SharedModule {}
