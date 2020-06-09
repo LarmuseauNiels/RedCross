@@ -1,4 +1,7 @@
 export class FormResult{
+  // Main
+  assignDate: Date;
+  macAddress: string;
 
   // Page 1 - User
   gender: string;
@@ -7,6 +10,7 @@ export class FormResult{
   hadFATraining: boolean;
   numberOfFATraining: number | null;
   trainingByRC: boolean | null;
+  blendedTraining: boolean | null;
   otherTrainingProvider: string | null;
 
   // Page 2 - Map
