@@ -9,21 +9,7 @@ import { Router } from '@angular/router';
 export class UserInformationPage implements OnInit {
 
   //Is to give an example, should come from database?
-  genders: any[] = [
-    {
-      id: 1,
-      text: "M"
-    },
-    {
-      id: 2,
-      text: "V"
-    },
-    {
-      id: 3,
-      text: "X"
-    },
-
-  ]
+  genders: string[] = [ "M", "V", "X"];
 
   ages: any[] = [
     {

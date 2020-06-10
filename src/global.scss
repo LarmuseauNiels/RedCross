@@ -38,9 +38,23 @@
     color: black;
 }
 
+.alert-checkbox-label.sc-ion-alert-md {
+    color:black;
+    text-overflow: initial;
+}
+
+[aria-checked=true].alert-checkbox-label.sc-ion-alert-md {
+    color:black;
+    text-overflow: initial;
+}
+
 .right-underlined {
     text-align: right;
     border-bottom: 3px solid lightgray;
+}
+
+.right-aligned {
+    text-align: right;
 }
 
 .bold-text {

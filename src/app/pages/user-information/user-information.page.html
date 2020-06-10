@@ -14,7 +14,7 @@
         <ion-item lines="none">
           <ion-label class="bold-text">Gender</ion-label>
           <ion-select interface="popover" [(ngModel)]="gender">
-            <ion-select-option *ngFor="let gender of genders" value="{{gender.id}}">{{ gender.text }}</ion-select-option>
+            <ion-select-option *ngFor="let gender of genders">{{ gender }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>

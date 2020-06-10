@@ -1,7 +1,54 @@
 <rc-header></rc-header>
 
 <ion-content>
-  <p>Professional help</p>
+  <ion-text>
+    <h3>Professional help</h3>
+  </ion-text>
+
+  <ion-row>
+    <ion-col>
+      <ion-item lines="none">
+        <ion-label class="bold-text ion-text-wrap">Professional help was needed</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="phNeeded" ></ion-checkbox>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="phNeeded">
+    <ion-row>    
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="bold-text ion-text-wrap">Type of professional help needed</ion-label>
+          <ion-select interface="popover" multiple="true" [(ngModel)]="phType">
+            <ion-select-option lines="none" clas="ion-text-wrap" *ngFor="let phType of phTypes">{{ phType }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="bold-text ion-text-wrap">How long did professional help take to arrive?</ion-label>
+          <ion-input class="right-aligned" type="time" [(ngModel)]="phTimeToArrival" ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>    
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="bold-text ion-text-wrap">Was hospitalisation required?</ion-label>
+          <ion-select interface="popover" [(ngModel)]="hospitalisationRequired">
+            <ion-select-option lines="none" *ngFor="let hrChoice of hrChoices">{{ hrChoice }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+
 </ion-content>
 
 <rc-navigator currentPage="6" (prev)="prev()" (next)="next()"></rc-navigator>
