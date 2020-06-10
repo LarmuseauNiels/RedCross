@@ -14,7 +14,7 @@
         <ion-item lines="none">
           <ion-label class="bold-text">Gender</ion-label>
           <ion-select interface="popover" [(ngModel)]="gender">
-            <ion-select-option *ngFor="let gender of genders" value="{{gender.id}}">{{ gender.text }}</ion-select-option>
+            <ion-select-option *ngFor="let gender of genders">{{ gender }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -24,8 +24,8 @@
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text">Age</ion-label>
-          <ion-select interface="popover" [(ngModel)]="age">
-            <ion-select-option *ngFor="let age of ages" value="{{age.id}}">{{ age.text }}</ion-select-option>
+          <ion-select interface="popover" [(ngModel)]="ageRange">
+            <ion-select-option *ngFor="let ageRange of ageRanges">{{ ageRange }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -36,7 +36,7 @@
         <ion-item lines="none">
           <ion-label class="bold-text">Education</ion-label>
           <ion-select interface="popover" [(ngModel)]="education">
-            <ion-select-option lines="none" *ngFor="let level of educationLevels" value="{{level.id}}">{{ level.text }}</ion-select-option>
+            <ion-select-option lines="none" *ngFor="let education of educationLevels">{{ education }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -51,28 +51,30 @@
 
           <ion-item lines="none">
             <ion-label class="ion-text-wrap">I have previously received a First Aid training </ion-label>
-            <ion-checkbox slot="end" [(ngModel)]="hasFollowedFirstAidTraining" ></ion-checkbox>
+            <ion-checkbox slot="end" [(ngModel)]="hadFATraining" ></ion-checkbox>
           </ion-item>
           
-          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining">
-            <ion-label class="ion-text-wrap">How many times did you receive first aid training?</ion-label>
-            <ion-input class='right-underlined' type="number" required [(ngModel)]="amountOfTrainings" ></ion-input>
-          </ion-item>
-          
-          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining">
-            <ion-label class="ion-text-wrap">Some of these trainings were provided by the Red Cross</ion-label>
-            <ion-checkbox slot="end" [(ngModel)]="hasFollewedTrainingsWithRedCross"></ion-checkbox>
-          </ion-item>
-          
-          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining && hasFollewedTrainingsWithRedCross">
-            <ion-label class="ion-text-wrap">Some of these trainings were First Aid Blended Learning training</ion-label>
-            <ion-checkbox slot="end" [(ngModel)]="firstAidBlendedLearningTraining"></ion-checkbox>
-          </ion-item>
-          
-          <ion-item lines="none" *ngIf="hasFollowedFirstAidTraining && !hasFollewedTrainingsWithRedCross">
-            <ion-label class="ion-text-wrap">Who was the other provider?</ion-label>
-            <ion-input class='right-underlined' type="text" [(ngModel)]="otherProvider" ></ion-input>
-          </ion-item>
+          <div *ngIf="hadFATraining">
+            <ion-item lines="none">
+              <ion-label class="ion-text-wrap">How many times did you receive first aid training?</ion-label>
+              <ion-input class='right-underlined' type="number" required [(ngModel)]="numberOfFATraining" ></ion-input>
+            </ion-item>
+            
+            <ion-item lines="none">
+              <ion-label class="ion-text-wrap">Some of these trainings were provided by the Red Cross</ion-label>
+              <ion-checkbox slot="end" [(ngModel)]="trainingByRC"></ion-checkbox>
+            </ion-item>
+            
+            <ion-item lines="none" *ngIf="trainingByRC">
+              <ion-label class="ion-text-wrap">Some of these trainings were First Aid Blended Learning training</ion-label>
+              <ion-checkbox slot="end" [(ngModel)]="blendedTraining"></ion-checkbox>
+            </ion-item>
+            
+            <ion-item lines="none" *ngIf="!trainingByRC">
+              <ion-label class="ion-text-wrap">Who was the other provider?</ion-label>
+              <ion-input class='right-underlined' type="text" [(ngModel)]="otherTrainingProvider" ></ion-input>
+            </ion-item>
+          </div>
         
         </ion-list>
       </ion-col>
