@@ -29,7 +29,6 @@ export class NavigatorComponent {
         element.selected = true;
       }
     });
-    console.log(this.dots)
   }
 
   @Output() public prev = new EventEmitter<any>();

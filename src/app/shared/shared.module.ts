@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header/header.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { CommonModule } from '@angular/common';
+import { TilesComponent } from './tile/tiles.component';
 
 @NgModule({
   imports: [
@@ -12,11 +13,13 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: [
     HeaderComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    TilesComponent
   ],
   exports: [
     HeaderComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    TilesComponent
   ]
 })
 export class SharedModule {}

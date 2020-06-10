@@ -1,0 +1,12 @@
+<ion-grid>
+  <ion-row>
+      <ion-col *ngFor="let tile of tiles" size="4">
+        <div class="container" [ngClass]="{'selected': tile.selected}" (click)="tile.selected = !tile.selected">
+          <div class="content">
+            <img src="{{tile.image}}">
+            <p>{{tile.title}}</p>
+          </div>
+        </div>
+      </ion-col>
+  </ion-row>
+</ion-grid>
