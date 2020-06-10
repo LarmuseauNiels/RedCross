@@ -10,66 +10,21 @@ export class UserInformationPage implements OnInit {
 
   //Is to give an example, should come from database?
   genders: string[] = [ "M", "V", "X"];
+  ageRanges: string[] = ["<15", "15-25","25-35","35-45","45-55","65-75","75-85",">85"];
+  educationLevels: string[] = [ "Primary school", "High school", "Bachelor's degree", "Master's degree", "Phd"];
 
-  ages: any[] = [
-    {
-      id: 1,
-      text: "15-25"
-    },
-    {
-      id: 2,
-      text: "25-35"
-    }
-  ]
-
-  educationLevels: any[] = [
-    {
-      id: 1,
-      text: "Primary school"
-    },
-    {
-      id: 2,
-      text: "High school"
-    },
-    {
-      id: 3,
-      text: "Bachelor's degree"
-    },
-    {
-      id: 4,
-      text: "Master's degree"
-    },
-    {
-      id: 5,
-      text: "Phd"
-    }
-  ]
-
-  gender: number;
-  age: number;
-  education: number;
-  hasFollowedFirstAidTraining: boolean;
-  amountOfTrainings: number;
-  hasFollewedTrainingsWithRedCross: boolean;
-  otherProvider:string;
-  firstAidBlendedLearningTraining:boolean;
-
+  gender: string;
+  ageRange: string;
+  education: string;
+  hadFATraining: boolean;
+  numberOfFATraining: number;
+  trainingByRC: boolean;
+  otherTrainingProvider:string;
+  blendedTraining:boolean;
 
   constructor(public router: Router) { }
 
   ngOnInit() {
-  }
-
-  //This was mainly to test.
-  NextPage() {
-    console.log(this.gender);
-    console.log(this.age);
-    console.log(this.education);
-    console.log(this.hasFollowedFirstAidTraining);
-    console.log(this.amountOfTrainings);
-    console.log(this.hasFollewedTrainingsWithRedCross);
-    console.log(this.otherProvider);
-    console.log(this.firstAidBlendedLearningTraining);
   }
 
   prev(){
