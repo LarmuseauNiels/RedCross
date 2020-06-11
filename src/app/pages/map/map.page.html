@@ -3,21 +3,11 @@
 
 <ion-content>
   <ion-text>
-    <h3>Where did you apply first aid.</h3>
+    <h3>Where did you apply first aid?</h3>
   </ion-text>
 
-  <div #mapElement class="map"></div>
-
-  <div class="map-wrapper">      
-    <div #mapElement id="map"></div>
-  </div>
-  
-  <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="UpdateSearchResults()" placeholder="Search for a place"  (ionClear)="ClearAutocomplete()"></ion-searchbar>
-  <ion-list [hidden]="autocompleteItems.length == 0">
-    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectSearchResult(item)">
-      {{ item.description }}
-    </ion-item>
-  </ion-list>
+  <div id="mapId" style="height:75%"></div>
+  <ion-searchbar [(ngModel)]="address"  placeholder="Search for a place"></ion-searchbar>
 </ion-content>
 
 <rc-navigator currentPage="2" (prev)="prev()" (next)="next()"></rc-navigator>
