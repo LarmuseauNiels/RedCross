@@ -23,6 +23,7 @@ export class AssistancePage implements OnInit {
       this.assistanceTiles.push(new TileModel('Removal', 'assets/icon/assistance/removal.png'));
       this.assistanceTiles.push(new TileModel('Cleaned', 'assets/icon/assistance/cleaned.png'));
       this.assistanceTiles.push(new TileModel('Kept awake', 'assets/icon/assistance/kept-awake.png'));
+      this.assistanceTiles.push(new TileModel('Other', 'assets/icon/other.png'));
   }
 
   prev(){

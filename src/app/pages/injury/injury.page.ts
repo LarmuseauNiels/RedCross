@@ -21,6 +21,7 @@ export class InjuryPage implements OnInit {
       this.injuryTiles.push(new TileModel('Poisoning', 'assets/icon/injury/poisoning.png'));
       this.injuryTiles.push(new TileModel('Head injury', 'assets/icon/injury/headinjury.png'));
       this.injuryTiles.push(new TileModel('Unconsciousness', 'assets/icon/injury/unconsciosness.png'));
+      this.injuryTiles.push(new TileModel('Other', 'assets/icon/other.png'));
   }
 
   prev(){
