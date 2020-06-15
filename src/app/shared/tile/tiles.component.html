@@ -1,5 +1,5 @@
 <ion-grid>
-  <ion-row>
+  <ion-row class="ion-justify-content-center">
       <ion-col *ngFor="let tile of tiles" size="4">
         <div class="container" [ngClass]="{'selected': tile.selected}" (click)="tile.selected = !tile.selected">
           <div class="content">
