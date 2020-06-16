@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import {Map,tileLayer,marker} from 'leaflet';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {NativeGeocoder,NativeGeocoderOptions} from "@ionic-native/native-geocoder/ngx";
+import { FormStoreService } from 'src/app/services/formStore.service';
+import { FormResult } from 'src/app/services/formResult.model';
 
 @Component({
   selector: 'rc-map',
@@ -14,12 +16,15 @@ export class MapPage implements OnInit  {
   map:Map;
   newMarker:any;
   address:string[];
-  latitide: number;
-  longitude: number;
+
+  public formResult: FormResult;
 
   constructor(
     private geoLocation: Geolocation,
-    public router: Router) {}
+    public router: Router,
+    public formStore: FormStoreService) {
+      formStore.formResult.subscribe((result) => {this.formResult = result; });
+    }
 
 
   ngOnInit() {
@@ -50,6 +55,11 @@ export class MapPage implements OnInit  {
   }
 
   next(){
+    const position = this.newMarker.getLatLng();
+    this.formResult.latitude = position.latitude;
+    this.formResult.longitude = position.longitude;
+
+    this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/page3']);
   }
 

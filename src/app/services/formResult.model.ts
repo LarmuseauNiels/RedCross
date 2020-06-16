@@ -5,7 +5,7 @@ export class FormResult{
 
   // Page 1 - User
   gender: string;
-  ageRage: string;
+  ageRange: string;
   education: string;
   hadFATraining: boolean;
   numberOfFATraining: number | null;
@@ -14,8 +14,8 @@ export class FormResult{
   otherTrainingProvider: string | null;
 
   // Page 2 - Map
-  longitude: string;
-  latitude: string;
+  longitude: number;
+  latitude: number;
 
   // Page 3 - Setting
   setting: string;

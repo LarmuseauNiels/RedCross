@@ -7,10 +7,17 @@ import { TileModel } from './tile.model';
   styleUrls: ['./tiles.component.scss']
 })
 export class TilesComponent {
-  
+
   constructor() {
    }
 
-
   @Input() public tiles: TileModel[];
+  @Input() public selectMultiple: boolean = true;
+
+  select(title: string){
+    if (!this.selectMultiple){
+      this.tiles.forEach(x => x.selected = false);
+    }
+    this.tiles.filter(x => x.title === title).map(x => x.selected = true);
+  }
 }

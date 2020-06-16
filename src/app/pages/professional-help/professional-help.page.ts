@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Time } from '@angular/common';
+import { FormResult } from 'src/app/services/formResult.model';
+import { FormStoreService } from 'src/app/services/formStore.service';
 
 @Component({
   selector: 'rc-professional-help',
@@ -9,16 +11,16 @@ import { Time } from '@angular/common';
 })
 export class ProfessionalHelpPage implements OnInit {
 
-  phTypes: string[] = ["Ambulance", "GP", "Nurses", "Community Health Workers"];
-  hrChoices: string[] = ["Yes", "No", "Unknown"];
+  phTypes: string[] = ['Ambulance', 'GP', 'Nurses', 'Community Health Workers'];
+  hrChoices: string[] = ['Yes', 'No', 'Unknown'];
 
-  phNeeded: boolean;
-  phType: string;
   phTimeToArrival: Time;
-  hospitalisationRequired: string;
 
-  constructor(public router: Router) { }
+  public formResult: FormResult;
 
+  constructor(public router: Router, public formStore: FormStoreService) {
+    formStore.formResult.subscribe((result) => {this.formResult = result; });
+  }
 
   ngOnInit() {
   }
@@ -28,6 +30,8 @@ export class ProfessionalHelpPage implements OnInit {
   }
 
   next(){
+    this.formResult.phTimeToArriveMs = (this.phTimeToArrival?.hours * 3600000) ?? 0 + (this.phTimeToArrival?.minutes * 60000) ?? 0;
+    this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/end']);
   }
 

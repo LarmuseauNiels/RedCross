@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TileModel } from 'src/app/shared/tile/tile.model';
+import { FormResult } from 'src/app/services/formResult.model';
+import { FormStoreService } from 'src/app/services/formStore.service';
 
 @Component({
   selector: 'rc-assistance',
@@ -9,11 +11,19 @@ import { TileModel } from 'src/app/shared/tile/tile.model';
 })
 export class AssistancePage implements OnInit {
 
-  constructor(public router: Router) { }
+  public formResult: FormResult;
 
-  public assistanceTiles: TileModel[] = [];
+  constructor(public router: Router, public formStore: FormStoreService) {
+    formStore.formResult.subscribe((result) => {this.formResult = result; });
+  }
+
+  public assistanceTiles: TileModel[];
 
   ngOnInit() {
+      if (this.assistanceTiles){
+        return;
+      }
+      this.assistanceTiles = [];
       this.assistanceTiles.push(new TileModel('CPR', 'assets/icon/assistance/cpr.png'));
       this.assistanceTiles.push(new TileModel('Desinfected', 'assets/icon/assistance/desinfected.png'));
       this.assistanceTiles.push(new TileModel('Bandage', 'assets/icon/assistance/bandage.png'));
@@ -31,6 +41,8 @@ export class AssistancePage implements OnInit {
   }
 
   next(){
+    this.formResult.assistance = this.assistanceTiles.filter(x => x.selected).map(x => x.title);
+    this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/page6']);
   }
 

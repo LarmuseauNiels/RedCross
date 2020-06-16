@@ -4,7 +4,7 @@
   <ion-text>
     <h3>What type of assistance was given?</h3>
   </ion-text>
-  <rc-tiles [tiles]='assistanceTiles'></rc-tiles>
+  <rc-tiles [tiles]='assistanceTiles' [selectMultiple]='true'></rc-tiles>
 </ion-content>
 
 <rc-navigator currentPage="5" (prev)="prev()" (next)="next()"></rc-navigator>

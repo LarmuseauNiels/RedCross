@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TileModel } from 'src/app/shared/tile/tile.model';
+import { FormResult } from 'src/app/services/formResult.model';
+import { FormStoreService } from 'src/app/services/formStore.service';
 
 @Component({
   selector: 'rc-injury',
@@ -9,11 +11,19 @@ import { TileModel } from 'src/app/shared/tile/tile.model';
 })
 export class InjuryPage implements OnInit {
 
-  constructor(public router: Router) { }
+  public formResult: FormResult;
 
-  public injuryTiles: TileModel[] = [];
+  constructor(public router: Router, public formStore: FormStoreService) {
+    formStore.formResult.subscribe((result) => {this.formResult = result; });
+  }
+
+  public injuryTiles: TileModel[];
 
   ngOnInit() {
+      if (this.injuryTiles){
+        return;
+      }
+      this.injuryTiles = [];
       this.injuryTiles.push(new TileModel('Fracture', 'assets/icon/injury/fracture.png'));
       this.injuryTiles.push(new TileModel('Cuts', 'assets/icon/injury/cuts.png'));
       this.injuryTiles.push(new TileModel('Snake bite', 'assets/icon/injury/snake_bite.png'));
@@ -29,6 +39,8 @@ export class InjuryPage implements OnInit {
   }
 
   next(){
+    this.formResult.injury = this.injuryTiles.filter(x => x.selected).map(x => x.title);
+    this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/page5']);
   }
 }

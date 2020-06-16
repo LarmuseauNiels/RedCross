@@ -4,7 +4,7 @@
   <ion-text>
     <h3>What type of injury?</h3>
   </ion-text>
-  <rc-tiles [tiles]='injuryTiles'></rc-tiles>
+  <rc-tiles [tiles]='injuryTiles' [selectMultiple]='true'></rc-tiles>
 </ion-content>
 
 <rc-navigator currentPage="4" (prev)="prev()" (next)="next()"></rc-navigator>
