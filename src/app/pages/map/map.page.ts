@@ -5,6 +5,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {NativeGeocoder,NativeGeocoderOptions} from "@ionic-native/native-geocoder/ngx";
 import { FormStoreService } from 'src/app/services/formStore.service';
 import { FormResult } from 'src/app/services/formResult.model';
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'rc-map',
@@ -16,6 +17,8 @@ export class MapPage implements OnInit  {
   map:Map;
   newMarker:any;
   address:string[];
+  position:object;
+
 
   public formResult: FormResult;
 
@@ -43,9 +46,10 @@ export class MapPage implements OnInit  {
       this.newMarker = marker([resp.coords.latitude, resp.coords.longitude], {
         draggable: true
       }).addTo(this.map);
+      this.position = this.newMarker.getLatLng();
 
       this.newMarker.on("dragend", () => {
-        const position = this.newMarker.getLatLng();
+        this.position = this.newMarker.getLatLng();
        });
     })
   }
@@ -55,12 +59,9 @@ export class MapPage implements OnInit  {
   }
 
   next(){
-    const position = this.newMarker.getLatLng();
-    this.formResult.latitude = position.latitude;
-    this.formResult.longitude = position.longitude;
-
+    this.formResult.latitude = this.position["lat"];
+    this.formResult.longitude = this.position["lng"];
     this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/page3']);
   }
-
 }
