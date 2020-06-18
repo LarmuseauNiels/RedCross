@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'page1',
-    component: UserInformationPage
+    component: SettingPage
   },
   {
     path: 'page2',
@@ -25,19 +25,19 @@ const routes: Routes = [
   },
   {
     path: 'page3',
-    component: SettingPage
-  },
-  {
-    path: 'page4',
     component: InjuryPage
   },
   {
-    path: 'page5',
+    path: 'page4',
     component: AssistancePage
   },
   {
-    path: 'page6',
+    path: 'page5',
     component: ProfessionalHelpPage
+  },
+  {
+    path: 'page6',
+    component: UserInformationPage
   },
   {
     path: 'end',

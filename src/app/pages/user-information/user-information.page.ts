@@ -26,12 +26,12 @@ export class UserInformationPage implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/start']);
+    this.router.navigate(['/page5']);
   }
 
   next(){
     this.formStore.setFormResult(this.formResult);
-    this.router.navigate(['/page2']);
+    this.router.navigate(['/end']);
   }
 
 }

@@ -37,13 +37,13 @@ export class AssistancePage implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/page4']);
+    this.router.navigate(['/page3']);
   }
 
   next(){
     this.formResult.assistance = this.assistanceTiles.filter(x => x.selected).map(x => x.title);
     this.formStore.setFormResult(this.formResult);
-    this.router.navigate(['/page6']);
+    this.router.navigate(['/page5']);
   }
 
 }

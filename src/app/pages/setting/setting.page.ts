@@ -27,13 +27,13 @@ export class SettingPage implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/page2']);
+    this.router.navigate(['/start']);
   }
 
   next(){
     this.formResult.setting = this.settingTiles.filter(x => x.selected).shift()?.title;
     this.formStore.setFormResult(this.formResult);
-    this.router.navigate(['/page4']);
+    this.router.navigate(['/page2']);
   }
 
 }

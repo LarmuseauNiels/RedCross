@@ -30,7 +30,9 @@
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text ion-text-wrap">How long did professional help take to arrive?</ion-label>
-          <ion-input class="right-aligned" type="number" [(ngModel)]="phTimeToArrival" ></ion-input>
+          <ion-select interface="popover" [(ngModel)]="formResult.phTimeToArrive">
+            <ion-select-option lines="none" *ngFor="let time of phTimeToArrive">{{ time }}</ion-select-option>
+          </ion-select>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -51,4 +53,4 @@
 
 </ion-content>
 
-<rc-navigator currentPage="6" (prev)="prev()" (next)="next()"></rc-navigator>
+<rc-navigator currentPage="5" (prev)="prev()" (next)="next()"></rc-navigator>

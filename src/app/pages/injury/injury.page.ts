@@ -48,12 +48,12 @@ export class InjuryPage implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/page3']);
+    this.router.navigate(['/page2']);
   }
 
   next(){
     this.formResult.injury = this.injuryTiles.filter(x => x.selected).map(x => x.title);
     this.formStore.setFormResult(this.formResult);
-    this.router.navigate(['/page5']);
+    this.router.navigate(['/page4']);
   }
 }

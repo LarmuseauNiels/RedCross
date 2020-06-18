@@ -12,9 +12,8 @@ import { FormStoreService } from 'src/app/services/formStore.service';
 export class ProfessionalHelpPage implements OnInit {
 
   phTypes: string[] = ['Ambulance', 'GP', 'Nurses', 'Community Health Workers'];
+  phTimeToArrive: string[] = ['<15 minutes','15-30 minutes', '30-45 minutes', '45-60 minutes', '>60 minutes']
   hrChoices: string[] = ['Yes', 'No', 'Unknown'];
-
-  phTimeToArrival: number;
 
   public formResult: FormResult;
 
@@ -26,13 +25,13 @@ export class ProfessionalHelpPage implements OnInit {
   }
 
   prev(){
-    this.router.navigate(['/page5']);
+    this.router.navigate(['/page4']);
   }
 
   next(){
-    this.formResult.phTimeToArriveMs = (this.phTimeToArrival?.hours * 3600000) ?? 0 + (this.phTimeToArrival?.minutes * 60000) ?? 0;
     this.formStore.setFormResult(this.formResult);
-    this.router.navigate(['/end']);
+    console.log(this.formStore.formResult);
+    this.router.navigate(['/page6']);
   }
 
 }
