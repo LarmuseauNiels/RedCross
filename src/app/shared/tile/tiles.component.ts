@@ -18,6 +18,8 @@ export class TilesComponent {
     if (!this.selectMultiple){
       this.tiles.forEach(x => x.selected = false);
     }
-    this.tiles.filter(x => x.title === title).map(x => x.selected = true);
+
+    
+    this.tiles.filter(x => x.title === title).map(x => x.selected = !x.selected);
   }
 }
