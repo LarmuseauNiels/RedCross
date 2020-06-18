@@ -14,7 +14,7 @@ export class ProfessionalHelpPage implements OnInit {
   phTypes: string[] = ['Ambulance', 'GP', 'Nurses', 'Community Health Workers'];
   hrChoices: string[] = ['Yes', 'No', 'Unknown'];
 
-  phTimeToArrival: Time;
+  phTimeToArrival: number;
 
   public formResult: FormResult;
 

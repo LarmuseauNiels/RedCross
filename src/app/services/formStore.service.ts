@@ -17,7 +17,7 @@ export class FormStoreService{
   }
 
   sendToApi(): Promise<boolean> {
-    const url = 'https://redcrossbackend.azurewebsites.net/api/App';
+    const url = 'https://redcrossbackend.azurewebsites.net/App';
     const request = this._form.getValue();
 
     return this.http.post(url, request)
