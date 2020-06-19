@@ -29,11 +29,12 @@ export class InjuryPage implements OnInit {
       this.injuryTiles.push(new TileModel('Unconsciousness', 'assets/icon/injury/unconsciosness.png'));
       this.injuryTiles.push(new TileModel('Choking', 'assets/icon/injury/choking.png'));
       this.injuryTiles.push(new TileModel('Chest Discomfort', 'assets/icon/injury/chest_discomfort.png'));
-      this.injuryTiles.push(new TileModel('Severe bleeding', 'assets/icon/injury/severe_bleeding.png'));
+      this.injuryTiles.push(new TileModel('Severe Bleeding', 'assets/icon/injury/severe_bleeding.png'));
       this.injuryTiles.push(new TileModel('Poisoning', 'assets/icon/injury/poisoning.png'));
       this.injuryTiles.push(new TileModel('Skin Wounds', 'assets/icon/injury/skin_wounds.png'));
       this.injuryTiles.push(new TileModel('Skin Wounds with Embedded Object', 'assets/icon/injury/skin_wounds_with_embedded_object.png'));
       this.injuryTiles.push(new TileModel('Burns', 'assets/icon/injury/burns.png'));
+      this.injuryTiles.push(new TileModel('Stings & Bites', 'assets/icon/injury/stings_and_bites.png'))
       this.injuryTiles.push(new TileModel('Injuries to muscles, joints or limbs', 'assets/icon/injury/injuries_to_muscles_joints_or_limbs.png'));
       this.injuryTiles.push(new TileModel('Injuries to head, neck or back', 'assets/icon/injury/injury_head_neck_or_back.png'));
       this.injuryTiles.push(new TileModel('Eye Injuries', 'assets/icon/injury/eye_injury.png'));
