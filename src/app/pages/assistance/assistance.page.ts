@@ -36,12 +36,32 @@ export class AssistancePage implements OnInit {
       {
         //gather all the needed assistances
         var assistances = [].concat.apply([],this.injuries.map(x => this.assistancePerInjuryMap.get(x)));
-        
+
         //Only keep the unique assistances;
         var uniqueAssistances = assistances.filter((v,i) => assistances.indexOf(v) === i);
+      
+        //Put the unique assistances in the assistanceTiles array
+        uniqueAssistances.map(x =>this.assistanceTiles.push(this.assistancesMap.get(x)) );
+      
+        //Put two random assistances, that are not in the uniqueassisances array, in the assistanceTiles array
+        this.getTwoRandomAssistances(uniqueAssistances).map(x => this.assistanceTiles.push(this.assistancesMap.get(x)));
+
+        this.assistanceTiles = this.assistanceTiles.sort(function(x, y) {
+          var xTitle = x.title;
+          var yTitle = y.title;
+
+          if (xTitle < yTitle) {
+            return -1;
+          }
+          if (xTitle > yTitle) {
+            return 1;
+          }
         
-        uniqueAssistances.map(x =>this.assistanceTiles.push(this.assistancesMap.get(x)));
-        
+          // titles must be equal
+          return 0;
+        });
+
+        //The assistance 'other' should always be included in the assistanceTiles array
         this.assistanceTiles.push(new TileModel('Other', 'assets/icon/other.png'));
       }
   }
@@ -82,8 +102,8 @@ export class AssistancePage implements OnInit {
     this.assistancesMap.set("OpenAirway", new TileModel('Open the Airway', 'assets/icon/assistance/general.png'));
     this.assistancesMap.set("CheckBreathing", new TileModel('Check for Breathing', 'assets/icon/assistance/general.png'));
     this.assistancesMap.set("CPR", new TileModel('CPR/Chest Compressions', 'assets/icon/assistance/cpr.png'));
-    this.assistancesMap.set("BlowBack", new TileModel('blows on the back', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("AbdominalThrusts", new TileModel('abdominal thrusts', 'assets/icon/assistance/abdominal_thrusts.png'));
+    this.assistancesMap.set("BlowBack", new TileModel('Blows on the back', 'assets/icon/assistance/general.png'));
+    this.assistancesMap.set("AbdominalThrusts", new TileModel('Abdominal thrusts', 'assets/icon/assistance/abdominal_thrusts.png'));
     this.assistancesMap.set("CheckMedication", new TileModel('Check for medication', 'assets/icon/assistance/check_medication.png'));
     this.assistancesMap.set("HandProtection", new TileModel('Put on hand protection', 'assets/icon/assistance/hand_protection.png'));
     this.assistancesMap.set("ApplyPressure", new TileModel('Apply Pressure on the Wound', 'assets/icon/assistance/general.png'));
@@ -118,9 +138,28 @@ export class AssistancePage implements OnInit {
     this.assistancesMap.set("MeasureFever", new TileModel('Measure fever', 'assets/icon/injury/fever.png'));
     this.assistancesMap.set("PreventDehydration", new TileModel('Prevent dehydration', 'assets/icon/assistance/dehydration.png'));
     this.assistancesMap.set("CheckMalaria", new TileModel('Check for Malaria', 'assets/icon/assistance/malaria.png'));
-    this.assistancesMap.set("CheckCholera", new TileModel('', 'assets/icon/assistance/cholera.png'));
+    this.assistancesMap.set("CheckCholera", new TileModel('Check for Cholera', 'assets/icon/assistance/cholera.png'));
     this.assistancesMap.set("IsolateVictim", new TileModel('Isolate victim', 'assets/icon/assistance/isolate.png'));
     this.assistancesMap.set("WaterOnEye", new TileModel('Dip lukewarm water onto the eyes', 'assets/icon/assistance/wtaer_on_eye.png'));
+  }
+
+  getTwoRandomAssistances(uniqueAssistances)
+  {
+    var result: string[] = [];
+
+    var allAssistances = Array.from(this.assistancesMap.keys());
+    var wrongAssistances = allAssistances.filter(x => !uniqueAssistances.includes(x));
+
+    var firstNumber = Math.round(Math.random() * wrongAssistances.length);
+    var secondNumber =  Math.round(Math.random() * wrongAssistances.length);
+    while(firstNumber === secondNumber) {
+      secondNumber =  Math.round(Math.random() * wrongAssistances.length);
+    }
+
+    result.push(wrongAssistances[firstNumber]);
+    result.push(wrongAssistances[secondNumber]);
+
+    return result;
   }
 
   prev(){
