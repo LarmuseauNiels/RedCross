@@ -4,7 +4,16 @@
   <ion-text>
     <h3>What type of assistance was given?</h3>
   </ion-text>
-  <rc-tiles [tiles]='assistanceTiles' [selectMultiple]='true'></rc-tiles>
+  <div *ngIf="formResult.injury.length > 0; else noInjuriesSelected">
+    <rc-tiles [tiles]='assistanceTiles' [selectMultiple]='true'></rc-tiles>
+  </div>
+  
+<ng-template #noInjuriesSelected>
+  <ion-text color="danger">
+    <h4>Please select the type of injury/injuries on the previous page</h4>
+  </ion-text>
+</ng-template>   
+
 </ion-content>
 
 <rc-navigator currentPage="4" (prev)="prev()" (next)="next()"></rc-navigator>

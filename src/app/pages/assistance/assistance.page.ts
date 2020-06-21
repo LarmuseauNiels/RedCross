@@ -44,7 +44,7 @@ export class AssistancePage implements OnInit {
         uniqueAssistances.map(x =>this.assistanceTiles.push(this.assistancesMap.get(x)) );
       
         //Put two random assistances, that are not in the uniqueassisances array, in the assistanceTiles array
-        this.getTwoRandomAssistances(uniqueAssistances).map(x => this.assistanceTiles.push(this.assistancesMap.get(x)));
+          this.getTwoRandomAssistances(uniqueAssistances).map(x => this.assistanceTiles.push(this.assistancesMap.get(x)));
 
         this.assistanceTiles = this.assistanceTiles.sort(function(x, y) {
           var xTitle = x.title;
@@ -67,7 +67,7 @@ export class AssistancePage implements OnInit {
   }
 
   setAssistancePerInjuryMap() {
-    this.assistancePerInjuryMap.set("General", ["AreaSafe", "AssessConditionCasualty", "RecoveryPosition", "CallEmergencyServices", "CheckConsciousness"]);
+    this.assistancePerInjuryMap.set("General", ["AreaSafe", "AssessConditionCasualty", "RecoveryPosition", "ContactServices", "CheckConsciousness"]);
     this.assistancePerInjuryMap.set("Stroke", ["VictimRest", "SupportVictim", "TalkToVictim", "RecoveryPosition"]);
     this.assistancePerInjuryMap.set("Unconsciousness", ["OpenAirway", "CheckBreathing", "CPR"])
     this.assistancePerInjuryMap.set("Choking", ["BlowBack", "AbdominalThrusts", "CPR"]);
@@ -88,26 +88,26 @@ export class AssistancePage implements OnInit {
     this.assistancePerInjuryMap.set("Fits",["AreaSafe", "RecoveryPosition" ]);
     this.assistancePerInjuryMap.set("Diarrhoea",["PreventDehydration", "CheckCholera"]);
     this.assistancePerInjuryMap.set("Measles",["WashHands", "IsolateVictim", "MeasureFever", "WaterOnEye", "PreventDehydration"]);
+    this.assistancePerInjuryMap.set("Other", ["AreaSafe", "AssessConditionCasualty", "RecoveryPosition", "CheckConsciousness", "VictimRest", "SupportVictim", "TalkToVictim", "OpenAirway", "CPR", "BlowBack", "AbdominalThrusts", "CheckMedication", "CheckBreathing", "HandProtection", "ApplyPressure", "ApplyPressureCleanCloth", "PressureDressing", "DiscardProduct", "CleanWound", "DrySkin", "Cover", "StabilizeObject", "BandageWound", "CoolBurn", "RemoveClothing", "ApplyHoney", "CoverWetWoundDressing", "CheckAllergies", "RemoveSting", "Icepack", "ImmobilizeLimb", "Splinting", "Stabilize", "ColdCompress", "RinseEyes", "CoverEyes", "PinchNose", "AssessBleeding", "WashHands", "ContactServices", "Report", "FreshAir", "LoosenClothing", "PreventDehydration", "CheckMalaria", "CheckCholera", "IsolateVictim", "MeasureFever", "WaterOnEye"]); 
   }
 
   setAssisanceMap() {
-    this.assistancesMap.set("AreaSafe", new TileModel('Make the area safe', 'assets/icon/assistance/general.png' ));
-    this.assistancesMap.set("AssessConditionCasualty", new TileModel('Assess the condition of the casualty', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("RecoveryPosition", new TileModel('Recovery position', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("CallEmergencyServices", new TileModel('Call the emergency services', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("CheckConsciousness", new TileModel('Check for consciousness', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("VictimRest", new TileModel('Let the victim rest', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("SupportVictim", new TileModel('Support the victim', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("TalkToVictim", new TileModel('Keep talking to the victim', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("OpenAirway", new TileModel('Open the Airway', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("CheckBreathing", new TileModel('Check for Breathing', 'assets/icon/assistance/general.png'));
+    this.assistancesMap.set("AreaSafe", new TileModel('Make the area safe', 'assets/icon/assistance/safe_area.png' ));
+    this.assistancesMap.set("AssessConditionCasualty", new TileModel('Assess the condition of the casualty', 'assets/icon/assistance/assess_condition.png'));
+    this.assistancesMap.set("RecoveryPosition", new TileModel('Recovery position', 'assets/icon/assistance/recovery_position.png'));
+    this.assistancesMap.set("CheckConsciousness", new TileModel('Check for consciousness', 'assets/icon/assistance/check_consciousness.png'));
+    this.assistancesMap.set("VictimRest", new TileModel('Let the victim rest', 'assets/icon/assistance/rest.png'));
+    this.assistancesMap.set("SupportVictim", new TileModel('Support the victim', 'assets/icon/assistance/support_victim.png'));
+    this.assistancesMap.set("TalkToVictim", new TileModel('Keep talking to the victim', 'assets/icon/assistance/talk_to_victim.png'));
+    this.assistancesMap.set("OpenAirway", new TileModel('Open the Airway', 'assets/icon/assistance/open_airways.png'));
+    this.assistancesMap.set("CheckBreathing", new TileModel('Check for Breathing', 'assets/icon/assistance/check_breathing.png'));
     this.assistancesMap.set("CPR", new TileModel('CPR/Chest Compressions', 'assets/icon/assistance/cpr.png'));
-    this.assistancesMap.set("BlowBack", new TileModel('Blows on the back', 'assets/icon/assistance/general.png'));
+    this.assistancesMap.set("BlowBack", new TileModel('Blows on the back', 'assets/icon/assistance/fresh_air.png'));
     this.assistancesMap.set("AbdominalThrusts", new TileModel('Abdominal thrusts', 'assets/icon/assistance/abdominal_thrusts.png'));
     this.assistancesMap.set("CheckMedication", new TileModel('Check for medication', 'assets/icon/assistance/check_medication.png'));
     this.assistancesMap.set("HandProtection", new TileModel('Put on hand protection', 'assets/icon/assistance/hand_protection.png'));
-    this.assistancesMap.set("ApplyPressure", new TileModel('Apply Pressure on the Wound', 'assets/icon/assistance/general.png'));
-    this.assistancesMap.set("ApplyPressureCleanCloth", new TileModel('Apply Pressure on the Wound with clean cloth', 'assets/icon/assistance/general.png'));
+    this.assistancesMap.set("ApplyPressure", new TileModel('Apply pressure on the wound', 'assets/icon/assistance/apply_pressure.png'));
+    this.assistancesMap.set("ApplyPressureCleanCloth", new TileModel('Apply pressure on the wound with clean cloth', 'assets/icon/assistance/pressure_clean_cloth.png'));
     this.assistancesMap.set("PressureDressing", new TileModel('Pressure Dressing', 'assets/icon/assistance/plaster.png'));
     this.assistancesMap.set("DiscardProduct", new TileModel('Discard leftover product', 'assets/icon/assistance/removal.png'));
     this.assistancesMap.set("CleanWound", new TileModel('Clean the wound', 'assets/icon/assistance/clean_wound.png'));
@@ -125,7 +125,7 @@ export class AssistancePage implements OnInit {
     this.assistancesMap.set("ImmobilizeLimb", new TileModel('Immobilize fractured limb', 'assets/icon/assistance/immobilize.png'));
     this.assistancesMap.set("Splinting", new TileModel('Splinting', 'assets/icon/assistance/splinting.png'));
     this.assistancesMap.set("Stabilize", new TileModel('Stabilize head and neck', 'assets/icon/assistance/stabilize.png'));
-    this.assistancesMap.set("ColdCompress", new TileModel('Apply cold compress', 'assets/icon/assistance/ices.png'));
+    this.assistancesMap.set("ColdCompress", new TileModel('Apply cold compress', 'assets/icon/assistance/iced.png'));
     this.assistancesMap.set("RinseEyes", new TileModel('Rinse the eyes', 'assets/icon/assistance/rinse_eye.png'));
     this.assistancesMap.set("CoverEyes", new TileModel('Cover the eyes', 'assets/icon/assistance/cover_eye.png'));
     this.assistancesMap.set("PinchNose", new TileModel('Pinch nose for 5 minutes', 'assets/icon/assistance/pinch.png'));
@@ -140,7 +140,7 @@ export class AssistancePage implements OnInit {
     this.assistancesMap.set("CheckMalaria", new TileModel('Check for Malaria', 'assets/icon/assistance/malaria.png'));
     this.assistancesMap.set("CheckCholera", new TileModel('Check for Cholera', 'assets/icon/assistance/cholera.png'));
     this.assistancesMap.set("IsolateVictim", new TileModel('Isolate victim', 'assets/icon/assistance/isolate.png'));
-    this.assistancesMap.set("WaterOnEye", new TileModel('Dip lukewarm water onto the eyes', 'assets/icon/assistance/wtaer_on_eye.png'));
+    this.assistancesMap.set("WaterOnEye", new TileModel('Dip lukewarm water onto the eyes', 'assets/icon/assistance/water_on_eye.png'));
   }
 
   getTwoRandomAssistances(uniqueAssistances)
@@ -150,14 +150,18 @@ export class AssistancePage implements OnInit {
     var allAssistances = Array.from(this.assistancesMap.keys());
     var wrongAssistances = allAssistances.filter(x => !uniqueAssistances.includes(x));
 
-    var firstNumber = Math.round(Math.random() * wrongAssistances.length);
-    var secondNumber =  Math.round(Math.random() * wrongAssistances.length);
-    while(firstNumber === secondNumber) {
-      secondNumber =  Math.round(Math.random() * wrongAssistances.length);
+    console.log('Geraken we hier?');
+    if(wrongAssistances.length > 1)
+    {
+      var firstNumber = Math.round(Math.random() * wrongAssistances.length);
+      var secondNumber =  Math.round(Math.random() * wrongAssistances.length);
+      while(firstNumber === secondNumber) {
+        secondNumber =  Math.round(Math.random() * wrongAssistances.length);
+      }
+  
+      result.push(wrongAssistances[firstNumber]);
+      result.push(wrongAssistances[secondNumber]);
     }
-
-    result.push(wrongAssistances[firstNumber]);
-    result.push(wrongAssistances[secondNumber]);
 
     return result;
   }
