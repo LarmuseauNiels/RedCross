@@ -11,7 +11,7 @@ import { FormResult } from 'src/app/services/formResult.model';
 export class UserInformationPage implements OnInit {
 
   // Is to give an example, should come from database?
-  genders: string[] = [ 'M', 'V', 'X'];
+  genders: string[] = [ 'M', 'F', 'X'];
   ageRanges: string[] = ['<15', '15-25', '25-35', '35-45', '45-55', '65-75', '75-85', '>85'];
   educationLevels: string[] = [ 'No education', 'Primary school', 'High school', 'Bachelor\'s degree', 'Master\'s degree', 'Phd'];
 

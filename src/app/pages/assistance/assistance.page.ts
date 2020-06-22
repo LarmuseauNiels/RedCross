@@ -101,7 +101,7 @@ export class AssistancePage implements OnInit {
     this.assistancesMap.set("TalkToVictim", new TileModel('Keep talking to the victim', 'assets/icon/assistance/talk_to_victim.png'));
     this.assistancesMap.set("OpenAirway", new TileModel('Open the Airway', 'assets/icon/assistance/open_airways.png'));
     this.assistancesMap.set("CheckBreathing", new TileModel('Check for Breathing', 'assets/icon/assistance/check_breathing.png'));
-    this.assistancesMap.set("CPR", new TileModel('CPR/Chest Compressions', 'assets/icon/assistance/cpr.png'));
+    this.assistancesMap.set("CPR", new TileModel('CPR/Chest Compressions', 'assets/icon/assistance/CPR.png'));
     this.assistancesMap.set("BlowBack", new TileModel('Blows on the back', 'assets/icon/assistance/fresh_air.png'));
     this.assistancesMap.set("AbdominalThrusts", new TileModel('Abdominal thrusts', 'assets/icon/assistance/abdominal_thrusts.png'));
     this.assistancesMap.set("CheckMedication", new TileModel('Check for medication', 'assets/icon/assistance/check_medication.png'));
@@ -150,7 +150,6 @@ export class AssistancePage implements OnInit {
     var allAssistances = Array.from(this.assistancesMap.keys());
     var wrongAssistances = allAssistances.filter(x => !uniqueAssistances.includes(x));
 
-    console.log('Geraken we hier?');
     if(wrongAssistances.length > 1)
     {
       var firstNumber = Math.round(Math.random() * wrongAssistances.length);
