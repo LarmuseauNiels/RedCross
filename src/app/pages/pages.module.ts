@@ -12,6 +12,8 @@ import { ProfessionalHelpPage } from './professional-help/professional-help.page
 import { SettingPage } from './setting/setting.page';
 import { StartPage } from './start/start.page';
 import { EndPage } from './end/end.page';
+import { TermsAndConditionsPage } from './start/termsAndConditions/termsAndConditions.page';
+import { SettingInfoPage } from './setting/setting-info/setting-info.page';
 
 @NgModule({
   imports: [
@@ -29,7 +31,9 @@ import { EndPage } from './end/end.page';
     SettingPage,
     UserInformationPage,
     StartPage,
-    EndPage
+    EndPage,
+    TermsAndConditionsPage,
+    SettingInfoPage
   ],
   exports: [
     CommonModule,

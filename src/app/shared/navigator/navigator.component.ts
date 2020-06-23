@@ -7,7 +7,8 @@ import { NavigationDot } from './navigationDot.model';
   styleUrls: ['./navigator.component.scss']
 })
 export class NavigatorComponent {
-  private _currentPage: number = 1;
+  private _currentPage = 1;
+
   constructor() {
     for (let i = 1; i <= this.totalPages; i++){
       this.dots.push({page: i, selected: false});
@@ -15,20 +16,26 @@ export class NavigatorComponent {
    }
 
   dots: NavigationDot[] = [];
-  totalPages: number = 6;
+  totalPages = 6;
+  showDots = true;
 
   get currentPage(): number {
     return this._currentPage;
   }
 
   @Input() set currentPage(value: number){
-    this._currentPage = value;
-    this.dots.forEach(element => {
-      element.selected = false;
-      if(element.page == value) {
-        element.selected = true;
-      }
-    });
+    if (value == 0){
+      this.showDots = false;
+    }
+    else {
+      this._currentPage = value;
+      this.dots.forEach(element => {
+        element.selected = false;
+        if (element.page == value) {
+          element.selected = true;
+        }
+      });
+    }
   }
 
   @Output() public prev = new EventEmitter<any>();

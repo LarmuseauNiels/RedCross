@@ -2,7 +2,14 @@
 
 <ion-content>
   <ion-text>
-    <h3>What was the setting?</h3>
+    <div class="title-text">
+      <div class="title-icon">
+        <h3>What was the setting?</h3>
+        <ion-icon src="assets/svg/information-circle.svg" (click)="presentModal()"></ion-icon>
+      </div>
+      <p>With this question we would like to ascertain in which setting most accidents occur and whether we have to change
+        our trainings accordingly.</p>
+    </div>
   </ion-text>
   <rc-tiles [tiles]='settingTiles' [selectMultiple]='false'></rc-tiles>
 </ion-content>
