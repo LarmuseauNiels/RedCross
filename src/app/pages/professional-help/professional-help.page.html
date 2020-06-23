@@ -2,25 +2,30 @@
 
 <ion-content>
   <ion-text>
-    <h3>Professional help</h3>
+    <div class="title-text">
+      <h3>Professional help</h3>
+      <p>With this question we would like to better understand the availability of professional help and how we can
+        better prepare First Aid responders to respond to the needs of their environment.</p>
+    </div>
   </ion-text>
 
   <ion-row>
     <ion-col>
       <ion-item lines="none">
         <ion-label class="bold-text ion-text-wrap">Professional help was needed</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="formResult.phNeeded" ></ion-checkbox>
+        <ion-checkbox slot="end" [(ngModel)]="formResult.phNeeded"></ion-checkbox>
       </ion-item>
     </ion-col>
   </ion-row>
 
   <div *ngIf="formResult.phNeeded">
-    <ion-row>    
+    <ion-row>
       <ion-col>
         <ion-item lines="none">
-          <ion-label class="bold-text ion-text-wrap">Type of professional help needed</ion-label>
+          <ion-label class="bold-text ion-text-wrap">Which type(s) of professional help was needed</ion-label>
           <ion-select interface="popover" multiple="true" [(ngModel)]="formResult.phType">
-            <ion-select-option lines="none" clas="ion-text-wrap" *ngFor="let phType of phTypes">{{ phType }}</ion-select-option>
+            <ion-select-option lines="none" clas="ion-text-wrap" *ngFor="let phType of phTypes">{{ phType }}
+            </ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -29,15 +34,16 @@
     <ion-row>
       <ion-col>
         <ion-item lines="none">
-          <ion-label class="bold-text ion-text-wrap">How long did professional help take to arrive?</ion-label>
-          <ion-select interface="popover" [(ngModel)]="formResult.phTimeToArrive">
+          <ion-label class="bold-text ion-text-wrap">How long did it take before the injured person received
+            professional help either at the scene of the accident or at an external location (e.g. hospital)</ion-label>
+          <ion-select interface="popover" [(ngModel)]="formResult.phTimeToArriveMs">
             <ion-select-option lines="none" *ngFor="let time of phTimeToArrive">{{ time }}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
     </ion-row>
 
-    <ion-row>    
+    <ion-row>
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text ion-text-wrap">Was hospitalisation required?</ion-label>

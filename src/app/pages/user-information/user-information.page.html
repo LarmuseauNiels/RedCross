@@ -5,11 +5,15 @@
 
     <ion-row>
       <ion-text>
-        <h3>Please fill in your information</h3>
+        <div class="title-text">
+          <h3>Please fill in your information</h3>
+          <p>With these demographic questions we would like to establish the reach of our First Aid training programmes
+            and whether we have to do more to provide First Aid training to everyone.</p>
+        </div>
       </ion-text>
     </ion-row>
 
-    <ion-row>    
+    <ion-row>
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text">Gender</ion-label>
@@ -20,7 +24,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>    
+    <ion-row>
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text">Age</ion-label>
@@ -31,12 +35,13 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>    
+    <ion-row>
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text">Education</ion-label>
           <ion-select interface="popover" [(ngModel)]="formResult.education">
-            <ion-select-option lines="none" *ngFor="let education of educationLevels">{{ education }}</ion-select-option>
+            <ion-select-option lines="none" *ngFor="let education of educationLevels">{{ education }}
+            </ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -51,31 +56,34 @@
 
           <ion-item lines="none">
             <ion-label class="ion-text-wrap">I have previously received a First Aid training </ion-label>
-            <ion-checkbox slot="end" [(ngModel)]="formResult.hadFATraining" ></ion-checkbox>
+            <ion-checkbox slot="end" [(ngModel)]="formResult.hadFATraining"></ion-checkbox>
           </ion-item>
-          
+
           <div *ngIf="formResult.hadFATraining">
             <ion-item lines="none">
               <ion-label class="ion-text-wrap">How many times did you receive First Aid training?</ion-label>
-              <ion-input class='right-underlined' type="number" required [(ngModel)]="formResult.numberOfFATraining" ></ion-input>
+              <ion-input class='right-underlined' type="number" required [(ngModel)]="formResult.numberOfFATraining">
+              </ion-input>
             </ion-item>
-            
+
             <ion-item lines="none">
               <ion-label class="ion-text-wrap">Some of these trainings were provided by the Red Cross</ion-label>
               <ion-checkbox slot="end" [(ngModel)]="formResult.trainingByRC"></ion-checkbox>
             </ion-item>
-            
+
             <ion-item lines="none" *ngIf="formResult.trainingByRC">
-              <ion-label class="ion-text-wrap">Some of these trainings were First Aid Blended Learning training</ion-label>
+              <ion-label class="ion-text-wrap">Some of these trainings were First Aid Blended Learning training
+              </ion-label>
               <ion-checkbox slot="end" [(ngModel)]="formResult.blendedTraining"></ion-checkbox>
             </ion-item>
-            
+
             <ion-item lines="none" *ngIf="!formResult.trainingByRC">
               <ion-label class="ion-text-wrap">Who was the other provider?</ion-label>
-              <ion-input class='right-underlined' type="text" [(ngModel)]="formResult.otherTrainingProvider" ></ion-input>
+              <ion-input class='right-underlined' type="text" [(ngModel)]="formResult.otherTrainingProvider">
+              </ion-input>
             </ion-item>
           </div>
-        
+
         </ion-list>
       </ion-col>
     </ion-row>

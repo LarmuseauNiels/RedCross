@@ -8,7 +8,8 @@ import { SettingPage } from './setting/setting.page';
 import { InjuryPage } from './injury/injury.page';
 import { AssistancePage } from './assistance/assistance.page';
 import { ProfessionalHelpPage } from './professional-help/professional-help.page';
-
+import { TermsAndConditionsPage } from './start/termsAndConditions/termsAndConditions.page';
+import { SettingInfoPage } from './setting/setting-info/setting-info.page';
 
 const routes: Routes = [
   {
@@ -18,6 +19,14 @@ const routes: Routes = [
   {
     path: 'page1',
     component: SettingPage
+  },
+  {
+    path: 'settingInfo',
+    component: SettingInfoPage
+  },
+  {
+    path: 'termsAndConditions',
+    component: TermsAndConditionsPage
   },
   {
     path: 'page2',

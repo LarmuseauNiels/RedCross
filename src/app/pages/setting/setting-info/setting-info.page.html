@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Setting information</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item *ngFor="let setting of settings">
+    <ion-thumbnail slot="start">
+      <img [src]="setting.icon">
+    </ion-thumbnail>
+    <ion-label>
+      <h3>{{setting.title}}</h3>
+      <p class="text">{{setting.text}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

@@ -1,6 +1,6 @@
 <div style="display:flex; justify-content: space-between;">
   <ion-button fill="clear" (click)="prev.emit()">&lt; PREV</ion-button>
-  <div style="display:flex; justify-content: space-between;">
+  <div style="display:flex; justify-content: space-between;" *ngIf="showDots">
       <span *ngFor="let dot of dots" class="dot" [ngClass]="{'dot-checked': dot.selected}"></span>
   </div>
   <ion-button fill="clear" (click)="next.emit()">NEXT &gt;</ion-button>

@@ -1,6 +1,9 @@
 <ion-content>
   <div class="container">
-    <div></div>
+    <div class="icons">
+      <div></div>
+      <ion-icon src="assets/svg/information-circle.svg" size="large" (click)="openTAC()" [hidden]="!TACreaded"></ion-icon>
+    </div>
     <div>
       <img class="logo" src="assets/images/logo/Logo_Belgian_RC.png">
       <p>Belgian Red Cross App</p>
