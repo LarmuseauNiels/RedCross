@@ -2,7 +2,10 @@
 
 <ion-content>
   <ion-text>
-    <h3>What type of assistance was given?</h3>
+    <div class="title-text">
+      <h3>What type of assistance was given?</h3>
+      <p>With this question we would like to ascertain whether our trainings accurately prepared you for the emergency that you had to treat</p>
+    </div>
   </ion-text>
   <div *ngIf="formResult.injury.length > 0; else noInjuriesSelected">
     <rc-tiles [tiles]='assistanceTiles' [selectMultiple]='true'></rc-tiles>

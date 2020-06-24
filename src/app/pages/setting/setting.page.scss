@@ -1,0 +1,14 @@
+.title-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+ion-icon {
+  color: var(--rc-red);
+  margin-right: 1rem;
+  margin-top: 1rem;;
+  width: 25px;
+  height: 25px;
+}

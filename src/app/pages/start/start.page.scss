@@ -18,7 +18,7 @@
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 1rem;
-  background-color: #ED1C24;
+  background-color: var(--rc-red);
   color: white;
   width: 45%;
   right: 5%;
@@ -29,4 +29,17 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--rc-dark-gray);
+}
+
+ion-icon {
+  color: var(--rc-red);
+  margin-right: 1rem;
+  margin-top: 1rem;;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }

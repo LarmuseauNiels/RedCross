@@ -1,13 +1,16 @@
-
 <rc-header></rc-header>
 
 <ion-content>
   <ion-text>
-    <h3>Where did you apply first aid?</h3>
+    <div class="title-text">
+      <h3>Where did you apply first aid?</h3>
+      <p>With this question we would like to get an understanding of whether there is a higher need of First Aid
+        interventions in some areas compared to others. It is therefore important to report as accurately as possible on
+        the exact location of your First Aid intervention.</p>
+    </div>
   </ion-text>
-
   <div id="mapId" style="height:75%"></div>
-  <ion-searchbar [(ngModel)]="address"  placeholder="Search for a place" (search)="onSearch($event)"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="address" placeholder="Search for a place" (search)="onSearch($event)"></ion-searchbar>
 </ion-content>
 
 <rc-navigator currentPage="2" (prev)="prev()" (next)="next()"></rc-navigator>
