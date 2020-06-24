@@ -7,6 +7,7 @@ import { FormStoreService } from 'src/app/services/formStore.service';
 import { FormResult } from 'src/app/services/formResult.model';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { HttpClient } from '@angular/common/http';
+import { ConnectionService } from 'ng-connection-service';
 
 @Component({
   selector: 'rc-map',
@@ -19,22 +20,28 @@ export class MapPage implements OnInit  {
   newMarker:any;
   address:string[];
   position:object;
-
+  isConnected = true;
 
   public formResult: FormResult;
 
   constructor(
     private geoLocation: Geolocation,
     private nativeGeocoder: NativeGeocoder,
+    private connectionService: ConnectionService,
     private http: HttpClient,
     public router: Router,
     public formStore: FormStoreService) {
       formStore.formResult.subscribe((result) => {this.formResult = result; });
+      this.connectionService.monitor().subscribe(isConnected => {
+        this.isConnected = isConnected;});
     }
-
-
   ngOnInit() {
-    this.loadMap();
+    if (this.isConnected){
+      this.loadMap();
+    }
+    else{
+      this.loadOffline();
+    }
   }
 
   loadMap() {
@@ -55,6 +62,16 @@ export class MapPage implements OnInit  {
         this.position = this.newMarker.getLatLng();
        });
     })
+  }
+
+  loadOffline(){
+    console.log("OFFLINE");
+    this.geoLocation.getCurrentPosition()
+    .then((resp) => {
+      this.position["lat"] = resp.coords.latitude;
+      this.position["lng"] = resp.coords.longitude;
+      this.next();
+    });
   }
 
   onSearch(event: any) { // without type info
