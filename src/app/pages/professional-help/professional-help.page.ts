@@ -12,8 +12,9 @@ import { FormStoreService } from 'src/app/services/formStore.service';
 export class ProfessionalHelpPage implements OnInit {
 
   phTypes: string[] = ['Ambulance', 'GP', 'Nurses', 'Community Health Workers', 'Red Cross Volunteers', 'Traditional Healer'];
-  phTimeToArrive: string[] = ['<15 minutes','15-30 minutes', '30-45 minutes', '45-60 minutes', '>60 minutes']
+  phTimeToArrive: string[] = ['<15 minutes','15-30 minutes', '30-45 minutes', '45-60 minutes', '>60 minutes','Unknown']
   hrChoices: string[] = ['Yes', 'No', 'Unknown'];
+  phNeededChoices: string[] = ['Yes', 'No', 'Unknown'];
 
   public formResult: FormResult;
 

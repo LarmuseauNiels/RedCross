@@ -12,7 +12,7 @@ export class UserInformationPage implements OnInit {
 
   // Is to give an example, should come from database?
   genders: string[] = [ 'M', 'F', 'X'];
-  ageRanges: string[] = ['<15', '15-25', '25-35', '35-45', '45-55', '65-75', '75-85', '>85'];
+  //ageRanges: string[] = ['<15', '15-25', '25-35', '35-45', '45-55', '65-75', '75-85', '>85'];
   educationLevels: string[] = [ 'No education', 'Primary school', 'High school', 'Bachelor\'s degree', 'Master\'s degree', 'Phd'];
 
   public formResult: FormResult;
@@ -30,6 +30,7 @@ export class UserInformationPage implements OnInit {
   }
 
   next(){
+    this.formResult.ageRange = this.formResult.ageRange.substring(0,4);
     this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/end']);
   }

@@ -27,10 +27,9 @@
     <ion-row>
       <ion-col>
         <ion-item lines="none">
-          <ion-label class="bold-text">Age</ion-label>
-          <ion-select interface="popover" [(ngModel)]="formResult.ageRange">
-            <ion-select-option *ngFor="let ageRange of ageRanges">{{ ageRange }}</ion-select-option>
-          </ion-select>
+          <ion-label class="bold-text">Birthyear</ion-label>
+          <ion-datetime [(ngModel)]="formResult.ageRange" [pickerOptions]="customPickerOptions" placeholder="Birthyear" displayFormat="YYYY" min="1900" max="2020">
+          </ion-datetime>
         </ion-item>
       </ion-col>
     </ion-row>
