@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormStoreService } from 'src/app/services/formStore.service';
 import { FormResult } from 'src/app/services/formResult.model';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'rc-user-information',
@@ -12,18 +13,55 @@ export class UserInformationPage implements OnInit {
 
   // Is to give an example, should come from database?
   genders: string[] = [ 'M', 'F', 'X'];
-  //ageRanges: string[] = ['<15', '15-25', '25-35', '35-45', '45-55', '65-75', '75-85', '>85'];
   educationLevels: string[] = [ 'No education', 'Primary school', 'High school', 'Bachelor\'s degree', 'Master\'s degree', 'Phd'];
 
   public formResult: FormResult;
   public showError = false;
 
-  constructor(public router: Router, public formStore: FormStoreService) {
+  constructor(
+    public router: Router,
+    public formStore: FormStoreService,
+    private storage: Storage
+  ) {
     formStore.formResult.subscribe((result) => {this.formResult = result; });
   }
 
   ngOnInit() {
+    this.storage.get('gender').then((gender) => {
+      if (gender){
+        this.formResult.gender = gender;
+      }
+    });
 
+    this.storage.get('ageRange').then((ageRange) => {
+      if (ageRange){
+        this.formResult.ageRange = ageRange;
+      }
+    });
+
+    this.storage.get('education').then((education) => {
+      if (education){
+        this.formResult.education = education;
+      }
+    });
+
+    this.storage.get('hadFATraining').then((hadFATraining) => {
+      if (hadFATraining){
+        this.formResult.hadFATraining = hadFATraining;
+      }
+    });
+
+    this.storage.get('numberOfFATraining').then((numberOfFATraining) => {
+      if (numberOfFATraining){
+        this.formResult.numberOfFATraining = numberOfFATraining;
+      }
+    });
+
+    this.storage.get('trainingByRC').then((trainingByRC) => {
+      if (trainingByRC){
+        this.formResult.trainingByRC = trainingByRC;
+      }
+    });
   }
 
   prev(){
@@ -60,7 +98,14 @@ export class UserInformationPage implements OnInit {
       }
     }
 
-    this.formResult.ageRange = this.formResult.ageRange.substring(0,4);
+    this.storage.set('gender', this.formResult.gender);
+    this.storage.set('ageRange', this.formResult.ageRange);
+    this.storage.set('education', this.formResult.education);
+    this.storage.set('hadFATraining', this.formResult.hadFATraining);
+    this.storage.set('numberOfFATraining', this.formResult.numberOfFATraining);
+    this.storage.set('trainingByRC', this.formResult.trainingByRC);
+
+    this.formResult.ageRange = this.formResult.ageRange.substring(0, 4);
     this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/end']);
   }
