@@ -63,7 +63,7 @@
           <div *ngIf="formResult.hadFATraining">
             <ion-item lines="none">
               <ion-label class="ion-text-wrap">How many times did you receive First Aid training?</ion-label>
-              <ion-input class='right-underlined' type="number" required [(ngModel)]="formResult.numberOfFATraining">
+              <ion-input class="right-aligned" type="number" placeholder="Times of received First Aid training" required [(ngModel)]="formResult.numberOfFATraining">
               </ion-input>
             </ion-item>
 
@@ -80,7 +80,7 @@
 
             <ion-item lines="none" *ngIf="!formResult.trainingByRC">
               <ion-label class="ion-text-wrap">Who was the other provider?</ion-label>
-              <ion-input class='right-underlined' type="text" [(ngModel)]="formResult.otherTrainingProvider">
+              <ion-input class="right-aligned" type="text" placeholder="Other provider" [(ngModel)]="formResult.otherTrainingProvider">
               </ion-input>
             </ion-item>
           </div>
