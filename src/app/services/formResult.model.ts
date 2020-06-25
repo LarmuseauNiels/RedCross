@@ -5,10 +5,10 @@ export class FormResult{
 
   // Page 1 - User
   gender: string;
-  ageRange: string;
+  age: string;
   education: string;
   hadFATraining: boolean;
-  numberOfFATraining: number | null;
+  numberOffFATtraining: number | null;
   trainingByRC: boolean | null;
   blendedTraining: boolean | null;
   otherTrainingProvider: string | null;
@@ -30,6 +30,6 @@ export class FormResult{
   // Page 6 - Professional help
   phNeeded: string;
   phType: string[];
-  phTimeToArriveMs: string;
+  phTimeToArrive: string;
   hospitalisationRequired: string;
 }

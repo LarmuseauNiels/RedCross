@@ -30,7 +30,7 @@
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text">Birthyear</ion-label>
-          <ion-datetime [(ngModel)]="formResult.ageRange" placeholder="Birthyear" displayFormat="YYYY" min="1900" max="2020">
+          <ion-datetime [(ngModel)]="formResult.age" placeholder="Birthyear" displayFormat="YYYY" min="1900" max="2020">
           </ion-datetime>
         </ion-item>
       </ion-col>
@@ -63,7 +63,7 @@
           <div *ngIf="formResult.hadFATraining">
             <ion-item lines="none">
               <ion-label class="ion-text-wrap">How many times did you receive First Aid training?</ion-label>
-              <ion-input class="right-aligned" type="number" placeholder="Times of received First Aid training" required [(ngModel)]="formResult.numberOfFATraining">
+              <ion-input class="right-aligned" type="number" placeholder="Times of received First Aid training" required [(ngModel)]="formResult.numberOffFATtraining">
               </ion-input>
             </ion-item>
 

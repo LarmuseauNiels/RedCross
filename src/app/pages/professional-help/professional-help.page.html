@@ -41,7 +41,7 @@
         <ion-item lines="none">
           <ion-label class="bold-text ion-text-wrap">How long did it take before the injured person received
             professional help either at the scene of the accident or at an external location (e.g. hospital)</ion-label>
-          <ion-select interface="popover" [(ngModel)]="formResult.phTimeToArriveMs">
+          <ion-select interface="popover" [(ngModel)]="formResult.phTimeToArrive">
             <ion-select-option lines="none" *ngFor="let time of phTimeToArrive">{{ time }}</ion-select-option>
           </ion-select>
         </ion-item>

@@ -42,12 +42,12 @@ export class ProfessionalHelpPage implements OnInit {
         return;
       }
 
-      if (!this.formResult.phTimeToArriveMs){
+      if (!this.formResult.phTimeToArrive){
         this.showError = true;
         return;
       }
 
-      if (!this.formResult.phTimeToArriveMs){
+      if (!this.formResult.phTimeToArrive){
         this.showError = true;
         return;
       }

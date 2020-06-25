@@ -33,9 +33,9 @@ export class UserInformationPage implements OnInit {
       }
     });
 
-    this.storage.get('ageRange').then((ageRange) => {
-      if (ageRange){
-        this.formResult.ageRange = ageRange;
+    this.storage.get('age').then((age) => {
+      if (age){
+        this.formResult.age = age;
       }
     });
 
@@ -51,9 +51,9 @@ export class UserInformationPage implements OnInit {
       }
     });
 
-    this.storage.get('numberOfFATraining').then((numberOfFATraining) => {
-      if (numberOfFATraining){
-        this.formResult.numberOfFATraining = numberOfFATraining;
+    this.storage.get('numberOffFATtraining').then((numberOffFATtraining) => {
+      if (numberOffFATtraining){
+        this.formResult.numberOffFATtraining = numberOffFATtraining;
       }
     });
 
@@ -74,7 +74,7 @@ export class UserInformationPage implements OnInit {
       return;
     }
 
-    if (!this.formResult.ageRange){
+    if (!this.formResult.age){
       this.showError = true;
       return;
     }
@@ -85,7 +85,7 @@ export class UserInformationPage implements OnInit {
     }
 
     if (this.formResult.hadFATraining){
-      if (!this.formResult.numberOfFATraining){
+      if (!this.formResult.numberOffFATtraining){
         this.showError = true;
         return;
       }
@@ -99,13 +99,13 @@ export class UserInformationPage implements OnInit {
     }
 
     this.storage.set('gender', this.formResult.gender);
-    this.storage.set('ageRange', this.formResult.ageRange);
+    this.storage.set('age', this.formResult.age);
     this.storage.set('education', this.formResult.education);
     this.storage.set('hadFATraining', this.formResult.hadFATraining);
-    this.storage.set('numberOfFATraining', this.formResult.numberOfFATraining);
+    this.storage.set('numberOffFATtraining', this.formResult.numberOffFATtraining);
     this.storage.set('trainingByRC', this.formResult.trainingByRC);
 
-    this.formResult.ageRange = this.formResult.ageRange.substring(0, 4);
+    this.formResult.age = this.formResult.age.substring(0, 4);
     this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/end']);
   }
