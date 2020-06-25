@@ -67,46 +67,46 @@ export class AssistancePage implements OnInit {
   }
 
   setAssistancePerInjuryMap() {
-    this.assistancePerInjuryMap.set('Unconscious with normal breathing', ['RecoveryPosition','CheckConsciousnessAndBreathing', 'CPR', 'LayBack']);
-    this.assistancePerInjuryMap.set('Unconsciousness without normal breathing', ['RescueBreaths', 'ChestCompression', 'AED', 'RecoveryPosition']);
-    this.assistancePerInjuryMap.set('Drowning', ['OutWater', 'RescueBreaths', 'ChestCompression', 'CoverPerson', 'RemoveWaterLungs']);
-    this.assistancePerInjuryMap.set('Stroke', ['Fast', 'ComfortablePosition', 'CalmPerson', 'UrgentTransport', 'Stay', 'DrinkWater']);
-    this.assistancePerInjuryMap.set('Choking', ['BlowBack', 'AbdominalThrusts', 'StartCPR', 'KeepCoughing', 'ChestThrusts', 'DrinkWater', 'LayDown', 'UpsideDown', 'RemoveObjectThroat']);
-    this.assistancePerInjuryMap.set('Chest discomfort', ['ComfortablePosition','UrgentTransport', 'Stay',  'CheckConsciousness', 'Aspirin', 'AskToCough']);
-    this.assistancePerInjuryMap.set('Severe bleeding', ['HandProtection', 'ApplyPressure', 'BandageWound', 'ThightBandage', 'ConstrictLimb', 'RemoveGauze', 'ElevateLimb']);
-    this.assistancePerInjuryMap.set('Internal bleeding', ['KeepWarm', 'StayCalm', 'KeepCheckingConsciousness', 'UrgentTransport', 'DrinkWater'])
-    this.assistancePerInjuryMap.set('Poisoning', ['PersonOnLeftSide', 'UrgentTransport', 'DrinkWater', 'DrinkMilk', 'Vomit', 'Charcoal' ]);
-    this.assistancePerInjuryMap.set('Emergency child birth', ['UrgentTransport', 'ComfortablePosition', 'DontPush', 'SupportBaby', 'CutBabyChord', 'PushBelly', 'DontUrinate']);
-    this.assistancePerInjuryMap.set('Skin Wounds',['HandProtection','CleanWound', 'CoverWound', 'CleanWoundDaily', 'DesinfectWound', 'TearDressing', 'SpitOnWound']);
-    this.assistancePerInjuryMap.set('Skin Wounds with Embedded Object',['HandProtection', 'StopMoving', 'UrgentTransport', 'RemoveObject', 'ApplyPressure', 'SpitOnWound']);
-    this.assistancePerInjuryMap.set('Burns',['CoolBurn', 'RemoveClothing', 'ApplyHoney', 'CoverWetWoundDressing', 'AloeVera', 'OpenBlisters', 'Butter', 'Ice']);
-    this.assistancePerInjuryMap.set('Bee or wasp sting', ['RemoveSting', 'RinseSkin', 'CoolSkinIce', 'ScratchBite', 'BurnSting', 'SuckVenom']);
-    this.assistancePerInjuryMap.set('Snake bite', ['LayDown', 'PersonNotMove', 'RinseVenomFromEyes', 'ImmobilizeBodypart', 'UrgentTransport', 'CatchSnake', 'SuckOrCutVenomOut', 'RubHerbs', 'PeeOnBite']);
-    this.assistancePerInjuryMap.set('Spider bite', ['HandProtection', 'WashVenomAway', 'CoolSkin', 'ImmobilizeSplintLimb', 'SuckOrCutVenomOut', 'RubHerbs', 'PeeOnBite' ]);
-    this.assistancePerInjuryMap.set('Scorpion sting', ['HandProtection', 'WashVenomAway', 'CoolSkin', 'ImmobilizeSplintLimb', 'CatchScorpion', 'SuckOrCutVenomOut', 'RubHerbs', 'PeeOnSting']);
-    this.assistancePerInjuryMap.set('Dog bite', ['HandProtection', 'DirectPressureBleeding', 'RinseWound', 'CoverWound' ]);
-    this.assistancePerInjuryMap.set('Cat bite', ['HandProtection', 'DirectPressureBleeding', 'RinseWound','CoverWound' ]);
-    this.assistancePerInjuryMap.set('Monkey bite', ['HandProtection', 'DirectPressureBleeding', 'RinseWound','CoverWound' ]);
-    this.assistancePerInjuryMap.set('Human bite', ['HandProtection', 'DirectPressureBleeding', 'RinseWound','CoverWound' ]);
-    this.assistancePerInjuryMap.set('Broken limb', ['DirectPressureBleeding', 'DontStandBrokenLeg', 'ImmobilizeSplintLimb', 'UrgentTransport', 'RaiseLeg', 'DislocatedLimb']);
-    this.assistancePerInjuryMap.set('Dislocated limb', ['ImmobilizeLimb', 'UrgentTransport']);
-    this.assistancePerInjuryMap.set('Injuries to muscles or joints', ['CoolInjury', 'PersonRest', 'MassageInjury', 'HeatInjury']);
-    this.assistancePerInjuryMap.set('Suspected spinal injuries', ['PersonNotMove', 'HeadNeckStill', 'WarmPerson', 'UrgentTransport', 'MoveNeck', 'QuietPlace']);
-    this.assistancePerInjuryMap.set('Object stuck in the eye', ['CoverEyeLoosely', 'HeadStill', 'UrgentTransport', 'RemoveObject'  ]);
-    this.assistancePerInjuryMap.set('Speck in the eye', ['PersonSit', 'RinseSpeckOut', 'CoverEye']);
-    this.assistancePerInjuryMap.set('Blow to the eye', ['CoolEye', 'RawMeat', 'CoverEye', 'RinseEye']);
-    this.assistancePerInjuryMap.set('Harmful liquids in the eye', ['RinseEye', 'UrgentTransport'])
-    this.assistancePerInjuryMap.set('Nose Bleed',['PinchNose', 'HeadForward', 'CottonBall', 'HeadBackward']);
-    this.assistancePerInjuryMap.set('Fainting',['LayDown', 'WetClothForehead', 'LoosenClothing', 'PreventFalling', 'RaiseLegs', 'WaterInFace', 'SlapShakePerson', 'DrinkCoffee']);
-    this.assistancePerInjuryMap.set('Fever',['PersonRest','PreventDehydration', 'AntiFever', 'Malaria', 'RubAlcohol', 'ColdShower']);
-    this.assistancePerInjuryMap.set('Fits',['AreaSafe', 'LoosenClothingNeck', 'RecoveryPosition', 'HoldDown', 'PutInMouth' ]);
-    this.assistancePerInjuryMap.set('Diarrhoea',['PreventDehydration', 'ZincTablets', 'Cholera', 'DontDrink']);
-    this.assistancePerInjuryMap.set('Measles',['IsolateVictim', 'PersonRest', 'PreventDehydration', 'AntiFever', 'WaterOnEye', ]);
-    this.assistancePerInjuryMap.set('Concussion', ['PersonRest', 'CalmPerson', 'PersonNotMove', 'Stay24Hours', 'ImmobilizeHead', 'ContinueActivities', 'Awake24Hours']);
-    this.assistancePerInjuryMap.set('Hypoglycemia', ['PersonSit', 'SugarDrink', 'Dextrose', 'SmallSnack', 'RaiseLegs']);
-    this.assistancePerInjuryMap.set('Hypothermia', ['CoverPersonBlanket', 'DryClothes', 'WarmSugeryDrink', 'RewarmPerson', 'DrinkAlcohol', 'HotShower', 'CompressesArmsLegs', 'MassagePerson']);
-    this.assistancePerInjuryMap.set('Heat stroke', ['PersonRest', 'PersonOutOfHeat', 'RemoveExcessClothing', 'CoolPerson','DrinkCoolWater', 'ContinueActivities']);
-  //   this.assistancePerInjuryMap.set("injury I treated is not listed", ["AreaSafe", "AssessConditionCasualty", "RecoveryPosition", "CheckConsciousness", "VictimRest", "SupportVictim", "TalkToVictim", "OpenAirway", "CPR", "BlowBack", "AbdominalThrusts", "CheckMedication", "CheckBreathing", "HandProtection", "ApplyPressure", "ApplyPressureCleanCloth", "PressureDressing", "DiscardProduct", "CleanWound", "DrySkin", "Cover", "StabilizeObject", "BandageWound", "CoolBurn", "RemoveClothing", "ApplyHoney", "CoverWetWoundDressing", "CheckAllergies", "RemoveSting", "Icepack", "ImmobilizeSplintLimb", "Splinting", "Stabilize", "ColdCompress", "RinseEyes", "CoverEyes", "PinchNose", "AssessBleeding", "WashHands", "ContactServices", "Report", "FreshAir", "LoosenClothing", "PreventDehydration", "CheckMalaria", "CheckCholera", "IsolateVictim", "MeasureFever", "WaterOnEye"]); 
+    this.assistancePerInjuryMap.set("Unconscious with normal breathing", ["RecoveryPosition","CheckConsciousnessAndBreathing", "CPR", "LayBack"]);
+    this.assistancePerInjuryMap.set("Unconsciousness without normal breathing", ["RescueBreaths", "ChestCompression", "AED", "RecoveryPosition"]);
+    this.assistancePerInjuryMap.set("Drowning", ["OutWater", "RescueBreaths", "ChestCompression", "CoverPerson", "RemoveWaterLungs"]);
+    this.assistancePerInjuryMap.set("Stroke", ["Fast", "ComfortablePosition", "CalmPerson", "UrgentTransport", "Stay", "DrinkWater"]);
+    this.assistancePerInjuryMap.set("Choking", ["BlowBack", "AbdominalThrusts", "StartCPR", "KeepCoughing", "ChestThrusts", "DrinkWater", "LayDown", "UpsideDown", "RemoveObjectThroat"]);
+    this.assistancePerInjuryMap.set("Chest discomfort", ["ComfortablePosition","UrgentTransport", "Stay",  "CheckConsciousness", "Aspirin", "AskToCough"]);
+    this.assistancePerInjuryMap.set("Severe bleeding", ["HandProtection", "ApplyPressure", "BandageWound", "ThightBandage", "ConstrictLimb", "RemoveGauze", "ElevateLimb"]);
+    this.assistancePerInjuryMap.set("Internal bleeding", ["KeepWarm", "StayCalm", "KeepCheckingConsciousness", "UrgentTransport", "DrinkWater"])
+    this.assistancePerInjuryMap.set("Poisoning", ["PersonOnLeftSide", "UrgentTransport", "DrinkWater", "DrinkMilk", "Vomit", "Charcoal" ]);
+    this.assistancePerInjuryMap.set("Emergency child birth", ["UrgentTransport", "ComfortablePosition", "DontPush", "SupportBaby", "CutBabyChord", "PushBelly", "DontUrinate"]);
+    this.assistancePerInjuryMap.set("Skin Wounds",["HandProtection","CleanWound", "CoverWound", "CleanWoundDaily", "DesinfectWound", "TearDressing", "SpitOnWound"]);
+    this.assistancePerInjuryMap.set("Skin Wounds with Embedded Object",["HandProtection", "StopMoving", "UrgentTransport", "RemoveObject", "ApplyPressure", "SpitOnWound"]);
+    this.assistancePerInjuryMap.set("Burns",["CoolBurn", "RemoveClothing", "ApplyHoney", "CoverWetWoundDressing", "AloeVera", "OpenBlisters", "Butter", "Ice"]);
+    this.assistancePerInjuryMap.set("Bee or wasp sting", ["RemoveSting", "RinseSkin", "CoolSkinIce", "ScratchBite", "BurnSting", "SuckVenom"]);
+    this.assistancePerInjuryMap.set("Snake bite", ["LayDown", "PersonNotMove", "RinseVenomFromEyes", "ImmobilizeBodypart", "UrgentTransport", "CatchSnake", "SuckOrCutVenomOut", "RubHerbs", "PeeOnBite"]);
+    this.assistancePerInjuryMap.set("Spider bite", ["HandProtection", "WashVenomAway", "CoolSkin", "ImmobilizeSplintLimb", "SuckOrCutVenomOut", "RubHerbs", "PeeOnBite" ]);
+    this.assistancePerInjuryMap.set("Scorpion sting", ["HandProtection", "WashVenomAway", "CoolSkin", "ImmobilizeSplintLimb", "CatchScorpion", "SuckOrCutVenomOut", "RubHerbs", "PeeOnSting"]);
+    this.assistancePerInjuryMap.set("Dog bite", ["HandProtection", "DirectPressureBleeding", "RinseWound", "CoverWound" ]);
+    this.assistancePerInjuryMap.set("Cat bite", ["HandProtection", "DirectPressureBleeding", "RinseWound","CoverWound" ]);
+    this.assistancePerInjuryMap.set("Monkey bite", ["HandProtection", "DirectPressureBleeding", "RinseWound","CoverWound" ]);
+    this.assistancePerInjuryMap.set("Human bite", ["HandProtection", "DirectPressureBleeding", "RinseWound","CoverWound" ]);
+    this.assistancePerInjuryMap.set("Broken limb", ["DirectPressureBleeding", "DontStandBrokenLeg", "ImmobilizeSplintLimb", "UrgentTransport", "RaiseLeg", "DislocatedLimb"]);
+    this.assistancePerInjuryMap.set("Dislocated limb", ["ImmobilizeLimb", "UrgentTransport"]);
+    this.assistancePerInjuryMap.set("Injuries to muscles or joints", ["CoolInjury", "PersonRest", "MassageInjury", "HeatInjury"]);
+    this.assistancePerInjuryMap.set("Suspected spinal injuries", ["PersonNotMove", "HeadNeckStill", "WarmPerson", "UrgentTransport", "MoveNeck", "QuietPlace"]);
+    this.assistancePerInjuryMap.set("Object stuck in the eye", ["CoverEyeLoosely", "HeadStill", "UrgentTransport", "RemoveObject"  ]);
+    this.assistancePerInjuryMap.set("Speck in the eye", ["PersonSit", "RinseSpeckOut", "CoverEye"]);
+    this.assistancePerInjuryMap.set("Blow to the eye", ["CoolEye", "RawMeat", "CoverEye", "RinseEye"]);
+    this.assistancePerInjuryMap.set("Harmful liquids in the eye", ["RinseEye", "UrgentTransport"])
+    this.assistancePerInjuryMap.set("Nose Bleed",["PinchNose", "HeadForward", "CottonBall", "HeadBackward"]);
+    this.assistancePerInjuryMap.set("Fainting",["LayDown", "WetClothForehead", "LoosenClothing", "PreventFalling", "RaiseLegs", "WaterInFace", "SlapShakePerson", "DrinkCoffee"]);
+    this.assistancePerInjuryMap.set("Fever",["PersonRest","PreventDehydration", "AntiFever", "Malaria", "RubAlcohol", "ColdShower"]);
+    this.assistancePerInjuryMap.set("Fits",["AreaSafe", "LoosenClothingNeck", "RecoveryPosition", "HoldDown", "PutInMouth" ]);
+    this.assistancePerInjuryMap.set("Diarrhoea",["PreventDehydration", "ZincTablets", "Cholera", "DontDrink"]);
+    this.assistancePerInjuryMap.set("Measles",["IsolateVictim", "PersonRest", "PreventDehydration", "AntiFever", "WaterOnEye", ]);
+    this.assistancePerInjuryMap.set("Concussion", ["PersonRest", "CalmPerson", "PersonNotMove", "Stay24Hours", "ImmobilizeHead", "ContinueActivities", "Awake24Hours"]);
+    this.assistancePerInjuryMap.set("Hypoglycemia", ["PersonSit", "SugarDrink", "Dextrose", "SmallSnack", "RaiseLegs"]);
+    this.assistancePerInjuryMap.set("Hypothermia", ["CoverPersonBlanket", "DryClothes", "WarmSugeryDrink", "RewarmPerson", "DrinkAlcohol", "HotShower", "CompressesArmsLegs", "MassagePerson"]);
+    this.assistancePerInjuryMap.set("Heat stroke", ["PersonRest", "PersonOutOfHeat", "RemoveExcessClothing", "CoolPerson","DrinkCoolWater", "ContinueActivities"]);
+    this.assistancePerInjuryMap.set("Injury I treated is not listed", ["RecoveryPosition", "CheckConsciousnessAndBreathing", "CPR",  "LayBack",  "RescueBreaths",  "ChestCompression",  "AED",  "OutWater",  "CoverPerson",  "RemoveWaterLungs",  "Fast",  "ComfortablePosition",  "CalmPerson",  "UrgentTransport",  "Stay",  "DrinkWater",  "BlowBack",  "AbdominalThrusts",  "StartCPR",  "KeepCoughing",  "ChestThrusts",  "LayDown",  "UpsideDown",  "RemoveObjectThroat",  "CheckConsciousness",  "Aspirin",  "AskToCough",  "HandProtection",  "BandageWound",  "ThightBandage",  "ConstrictLimb",  "RemoveGauze",  "ElevateLimb",  "KeepWarm",  "StayCalm",  "KeepCheckingConsciousness",  "PersonOnLeftSide",  "DrinkMilk",  "Vomit",  "Charcoal",  "DontPush",  "SupportBaby",  "CutBabyChord",  "PushBelly",  "DontUrinate",  "CleanWound",  "CoverWound",  "CleanWoundDaily",  "DesinfectWound",  "TearDressing",  "SpitOnWound",  "StopMoving",  "RemoveObject",  "ApplyPressure",  "CoolBurn",  "RemoveClothing",  "ApplyHoney",  "CoverWetWoundDressing",  "AloeVera",  "OpenBlisters",  "Butter",  "Ice",  "RemoveSting",  "RinseSkin",  "CoolSkinIce",  "ScratchBite",  "BurnSting",  "SuckVenom",  "PersonNotMove",  "RinseVenomFromEyes",  "ImmobilizeBodypart",  "CatchSnake",  "SuckOrCutVenomOut",  "RubHerbs",  "PeeOnBite",  "WashVenomAway",  "CoolSkin",  "ImmobilizeSplintLimb",  "CatchScorpion",  "PeeOnSting",  "DirectPressureBleeding",  "CoverWound",  "RinseWound",  "DontStandBrokenLeg",  "RaiseLeg",  "DislocatedLimb",  "ImmobilizeLimb",  "CoolInjury",  "PersonRest",  "MassageInjury",  "HeatInjury",  "HeadNeckStill",  "WarmPerson",  "MoveNeck",  "QuietPlace",  "CoverEyeLoosely",  "HeadStill",  "PersonSit",  "RinseSpeckOut",  "CoverEye",  "CoolEye",  "RawMeat",  "RinseEye",  "PinchNose",  "HeadForward",  "CottonBall",  "HeadBackward",  "WetClothForehead",  "LoosenClothing",  "PreventFalling",  "RaiseLegs",  "WaterInFace",  "SlapShakePerson",  "DrinkCoffee",  "PreventDehydration",  "AntiFever",  "Malaria",  "RubAlcohol",  "ColdShower",  "AreaSafe",  "LoosenClothingNeck",  "HoldDown",  "PutInMouth",  "ZincTablets",  "Cholera",  "DontDrink",  "IsolateVictim",  "WaterOnEye",  "Stay24Hours",  "ImmobilizeHead",  "ContinueActivities",  "Awake24Hours",  "SugarDrink",  "Dextrose",  "SmallSnack",  "CoverPersonBlanket",  "DryClothes",  "WarmSugeryDrink",  "RewarmPerson",  "DrinkAlcohol",  "HotShower",  "CompressesArmsLegs",  "MassagePerson",  "PersonOutOfHeat",  "RemoveExcessClothing",  "CoolPerson",  "DrinkCoolWater"]); 
   }
 
   setAssisanceMap() {
