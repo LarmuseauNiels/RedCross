@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { TileModel } from "src/app/shared/tile/tile.model";
-import { FormResult } from "src/app/services/formResult.model";
-import { FormStoreService } from "src/app/services/formStore.service";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TileModel } from 'src/app/shared/tile/tile.model';
+import { FormResult } from 'src/app/services/formResult.model';
+import { FormStoreService } from 'src/app/services/formStore.service';
 
 @Component({
-  selector: "rc-injury",
-  templateUrl: "./injury.page.html",
-  styleUrls: ["./injury.page.scss"],
+  selector: 'rc-injury',
+  templateUrl: './injury.page.html',
+  styleUrls: ['./injury.page.scss'],
 })
 export class InjuryPage implements OnInit {
 
@@ -18,6 +18,7 @@ export class InjuryPage implements OnInit {
   }
 
   public injuryTiles: TileModel[];
+  public showError = false;
 
   ngOnInit() {
       if (this.injuryTiles){
@@ -67,12 +68,16 @@ export class InjuryPage implements OnInit {
   }
 
   prev(){
-    this.router.navigate(["/page2"]);
+    this.router.navigate(['/page2']);
   }
 
   next(){
+    if (this.injuryTiles.filter(x => x.selected).length == 0){
+      this.showError = true;
+      return;
+    }
     this.formResult.injury = this.injuryTiles.filter(x => x.selected).map(x => x.title);
     this.formStore.setFormResult(this.formResult);
-    this.router.navigate(["/page4"]);
+    this.router.navigate(['/page4']);
   }
 }

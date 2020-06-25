@@ -23,6 +23,7 @@ export class SettingPage implements OnInit {
 
   public settingTiles: TileModel[] = [];
   public formResult: FormResult;
+  public showError = false;
 
   ngOnInit() {
       this.settingTiles.push(new TileModel('Home', 'assets/icon/setting/home.png'));
@@ -37,6 +38,10 @@ export class SettingPage implements OnInit {
   }
 
   next(){
+    if (!this.settingTiles.filter(x => x.selected).shift()?.title){
+      this.showError = true;
+      return;
+    }
     this.formResult.setting = this.settingTiles.filter(x => x.selected).shift()?.title;
     this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/page2']);

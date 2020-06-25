@@ -13,6 +13,8 @@
       </ion-text>
     </ion-row>
 
+    <rc-error [error]="'Please fill in all items.'" [showError]='showError'></rc-error>
+
     <ion-row>
       <ion-col>
         <ion-item lines="none">
@@ -28,7 +30,7 @@
       <ion-col>
         <ion-item lines="none">
           <ion-label class="bold-text">Birthyear</ion-label>
-          <ion-datetime [(ngModel)]="formResult.ageRange" [pickerOptions]="customPickerOptions" placeholder="Birthyear" displayFormat="YYYY" min="1900" max="2020">
+          <ion-datetime [(ngModel)]="formResult.ageRange" placeholder="Birthyear" displayFormat="YYYY" min="1900" max="2020">
           </ion-datetime>
         </ion-item>
       </ion-col>

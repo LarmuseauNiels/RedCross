@@ -7,16 +7,9 @@
       <p>With this question we would like to ascertain whether our trainings accurately prepared you for the emergency that you had to treat</p>
     </div>
   </ion-text>
-  <div *ngIf="formResult.injury.length > 0; else noInjuriesSelected">
-    <rc-tiles [tiles]='assistanceTiles' [selectMultiple]='true'></rc-tiles>
-  </div>
-  
-<ng-template #noInjuriesSelected>
-  <ion-text color="danger">
-    <h4>Please select the type of injury/injuries on the previous page</h4>
-  </ion-text>
-</ng-template>   
 
+  <rc-error [error]="'Please choose one or more assistance.'" [showError]='showError'></rc-error>
+  <rc-tiles [tiles]='assistanceTiles' [selectMultiple]='true'></rc-tiles>
 </ion-content>
 
 <rc-navigator currentPage="4" (prev)="prev()" (next)="next()"></rc-navigator>

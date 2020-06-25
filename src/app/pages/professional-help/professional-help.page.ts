@@ -17,6 +17,7 @@ export class ProfessionalHelpPage implements OnInit {
   phNeededChoices: string[] = ['Yes', 'No', 'Unknown'];
 
   public formResult: FormResult;
+  public showError = false;
 
   constructor(public router: Router, public formStore: FormStoreService) {
     formStore.formResult.subscribe((result) => {this.formResult = result; });
@@ -30,6 +31,33 @@ export class ProfessionalHelpPage implements OnInit {
   }
 
   next(){
+    if (!this.formResult.phNeeded){
+      this.showError = true;
+      return;
+    }
+
+    if (this.formResult.phNeeded == 'Yes'){
+      if (!this.formResult.phType){
+        this.showError = true;
+        return;
+      }
+
+      if (!this.formResult.phTimeToArriveMs){
+        this.showError = true;
+        return;
+      }
+
+      if (!this.formResult.phTimeToArriveMs){
+        this.showError = true;
+        return;
+      }
+
+      if (!this.formResult.hospitalisationRequired){
+        this.showError = true;
+        return;
+      }
+    }
+
     this.formStore.setFormResult(this.formResult);
     console.log(this.formStore.formResult);
     this.router.navigate(['/page6']);

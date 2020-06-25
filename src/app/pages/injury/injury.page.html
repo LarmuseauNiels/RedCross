@@ -7,6 +7,9 @@
       <p>With this question we would like to determine which injuries most commonly occur and we can better help to keep people safe</p>
     </div>
   </ion-text>
+
+  <rc-error [error]="'Please choose one or more injuries.'" [showError]='showError'></rc-error>
+
   <rc-tiles [tiles]='injuryTiles' [selectMultiple]='true'></rc-tiles>
 </ion-content>
 
