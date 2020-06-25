@@ -11,6 +11,9 @@
         our trainings accordingly.</p>
     </div>
   </ion-text>
+
+  <rc-error [error]="'Please choose a setting'" [showError]='showError'></rc-error>
+  
   <rc-tiles [tiles]='settingTiles' [selectMultiple]='false'></rc-tiles>
 </ion-content>
 

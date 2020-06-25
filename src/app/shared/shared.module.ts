@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { TilesComponent } from './tile/tiles.component';
 import { FormStoreService } from '../services/formStore.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   imports: [
@@ -17,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     HeaderComponent,
     NavigatorComponent,
-    TilesComponent
+    TilesComponent,
+    ErrorComponent
   ],
   exports: [
     HeaderComponent,
     NavigatorComponent,
-    TilesComponent
+    TilesComponent,
+    ErrorComponent
   ],
   providers: [
     FormStoreService

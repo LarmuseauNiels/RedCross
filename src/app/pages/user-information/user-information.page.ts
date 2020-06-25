@@ -16,6 +16,7 @@ export class UserInformationPage implements OnInit {
   educationLevels: string[] = [ 'No education', 'Primary school', 'High school', 'Bachelor\'s degree', 'Master\'s degree', 'Phd'];
 
   public formResult: FormResult;
+  public showError = false;
 
   constructor(public router: Router, public formStore: FormStoreService) {
     formStore.formResult.subscribe((result) => {this.formResult = result; });
@@ -30,6 +31,35 @@ export class UserInformationPage implements OnInit {
   }
 
   next(){
+    if (!this.formResult.gender){
+      this.showError = true;
+      return;
+    }
+
+    if (!this.formResult.ageRange){
+      this.showError = true;
+      return;
+    }
+
+    if (!this.formResult.education){
+      this.showError = true;
+      return;
+    }
+
+    if (this.formResult.hadFATraining){
+      if (!this.formResult.numberOfFATraining){
+        this.showError = true;
+        return;
+      }
+
+      if (!this.formResult.trainingByRC){
+        if (!this.formResult.otherTrainingProvider){
+          this.showError = true;
+          return;
+        }
+      }
+    }
+
     this.formResult.ageRange = this.formResult.ageRange.substring(0,4);
     this.formStore.setFormResult(this.formResult);
     this.router.navigate(['/end']);

@@ -28,8 +28,8 @@ export class FormResult{
   confidentApplyingFA: number;
 
   // Page 6 - Professional help
-  phNeeded: boolean;
+  phNeeded: string;
   phType: string[];
-  phTimeToArriveMs: number;
-  hospitalisationRequired: boolean;
+  phTimeToArriveMs: string;
+  hospitalisationRequired: string;
 }
