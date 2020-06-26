@@ -29,7 +29,7 @@ export class SettingPage implements OnInit {
       this.settingTiles.push(new TileModel('Home', 'assets/icon/setting/home.png'));
       this.settingTiles.push(new TileModel('School', 'assets/icon/setting/school.png'));
       this.settingTiles.push(new TileModel('Traffic', 'assets/icon/setting/traffic.png'));
-      this.settingTiles.push(new TileModel('Public Space', 'assets/icon/setting/street.png'));
+      this.settingTiles.push(new TileModel('Public Space', 'assets/icon/setting/pubic_space.png'));
       this.settingTiles.push(new TileModel('Work', 'assets/icon/setting/work.png'));
   }
 

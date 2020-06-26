@@ -43,9 +43,6 @@ export class AssistancePage implements OnInit {
         //Put the unique assistances in the assistanceTiles array
         uniqueAssistances.map(x =>this.assistanceTiles.push(this.assistancesMap.get(x)) );
 
-        //Put two random assistances, that are not in the uniqueassisances array, in the assistanceTiles array
-          //this.getTwoRandomAssistances(uniqueAssistances).map(x => this.assistanceTiles.push(this.assistancesMap.get(x)));
-
         this.assistanceTiles = this.assistanceTiles.sort(function(x, y) {
           var xTitle = x.title;
           var yTitle = y.title;
@@ -62,7 +59,7 @@ export class AssistancePage implements OnInit {
         });
 
         //The assistance "other" should always be included in the assistanceTiles array
-        this.assistanceTiles.push(new TileModel('Action I took is not listed', 'assets/icon/other.png'));
+        this.assistanceTiles.push(new TileModel('Action I took is not listed', 'assets/icon/assistance/general.png'));
       }
   }
 
@@ -146,139 +143,116 @@ export class AssistancePage implements OnInit {
     this.assistancesMap.set('KeepWarm', new TileModel('Keep the person warm to prevent shock', 'assets/icon/assistance/cover_person.png'  ))
     this.assistancesMap.set('StayCalm', new TileModel('Stay calm and reassure the person', 'assets/icon/assistance/stay.png'  ))
     this.assistancesMap.set('KeepCheckingConsciousness', new TileModel('Keep checking consciousness and breathing', 'assets/icon/assistance/check_consciousness.png'));
-    this.assistancesMap.set('PersonOnLeftSide', new TileModel('Place the person on their left side', ''));
-    this.assistancesMap.set('DrinkMilk', new TileModel('Let the person drink some milk', 'assets/icon/assistance/drink.png'));
+    this.assistancesMap.set('PersonOnLeftSide', new TileModel('Place the person on their left side', 'assets/icon/assistance/lay_side.png'));
+    this.assistancesMap.set('DrinkMilk', new TileModel('Let the person drink some milk', 'assets/icon/assistance/drink_milk.png'));
     this.assistancesMap.set('Vomit', new TileModel('Make the person vomit', 'assets/icon/assistance/vomit.png'));
     this.assistancesMap.set('Charcoal', new TileModel('Let the person take activated charcoal', 'assets/icon/assistance/charcoal.png' ));
-    this.assistancesMap.set('DontPush', new TileModel('Tell the mother not to push when the baby\'s head is being delivered', ''));
-    this.assistancesMap.set('SupportBaby', new TileModel('Support the baby\'s head and shoulders', ''));
-    this.assistancesMap.set('CutBabyChord', new TileModel('Cut the baby\'s cord', ''));
-    this.assistancesMap.set('PushBelly', new TileModel('Push on the mothers belly during labour or after delivery', ''));
-    this.assistancesMap.set('DontUrinate', new TileModel('Make sure the mother doesn\'t urinate during labour', ''));
+    this.assistancesMap.set('DontPush', new TileModel('Tell the mother not to push when the baby\'s head is being delivered', 'assets/icon/assistance/dont.png'));
+    this.assistancesMap.set('SupportBaby', new TileModel('Support the baby\'s head and shoulders', 'assets/icon/assistance/baby_head.png'));
+    this.assistancesMap.set('CutBabyChord', new TileModel('Cut the baby\'s cord', 'assets/icon/assistance/scissor.png'));
+    this.assistancesMap.set('PushBelly', new TileModel('Push on the mothers belly during labour or after delivery', 'assets/icon/assistance/mothers_belly.png'));
+    this.assistancesMap.set('DontUrinate', new TileModel('Make sure the mother doesn\'t urinate during labour', 'assets/icon/assistance/dont_urinate.png'));
     this.assistancesMap.set('CleanWound', new TileModel('Clean the wound', 'assets/icon/assistance/clean_wound.png'));
-    this.assistancesMap.set('CoverWound', new TileModel('Clean the wound', ''));
-    this.assistancesMap.set('CleanWoundDaily', new TileModel('Clean the wound daily if the wound is infected', ''));
-    this.assistancesMap.set('DesinfectWound', new TileModel('Desinfect the wound ', ''));
-    this.assistancesMap.set('TearDressing', new TileModel('Tear of the dressing', ''));
-    this.assistancesMap.set('SpitOnWound', new TileModel('Spit on the wound', ''));
-    this.assistancesMap.set('StopMoving', new TileModel('stop the object from moving', ''));
-    this.assistancesMap.set('RemoveObject', new TileModel('Remove the object as soon as possible', ''));
+    this.assistancesMap.set('CleanWoundDaily', new TileModel('Clean the wound daily if the wound is infected', 'assets/icon/assistance/clean_wound.png'));
+    this.assistancesMap.set('DesinfectWound', new TileModel('Desinfect the wound ', 'assets/icon/assistance/desinfect.png'));
+    this.assistancesMap.set('TearDressing', new TileModel('Tear of the dressing', 'assets/icon/assistance/bandage.png'));
+    this.assistancesMap.set('SpitOnWound', new TileModel('Spit on the wound', 'assets/icon/assistance/spit.png'));
+    this.assistancesMap.set('StopMoving', new TileModel('stop the object from moving', 'assets/icon/assistance/dont.png'));
+    this.assistancesMap.set('RemoveObject', new TileModel('Remove the object as soon as possible', 'assets/icon/assistance/removal.png'));
     this.assistancesMap.set('ApplyPressure', new TileModel('Apply direct pressure to the wound', 'assets/icon/assistance/apply_pressure.png'));
     this.assistancesMap.set('CoolBurn', new TileModel('Cool the burn', 'assets/icon/assistance/iced.png'));
     this.assistancesMap.set('RemoveClothing', new TileModel('Remove Clothing and jewellery if not stuck on the skin', 'assets/icon/assistance/removal.png'));
     this.assistancesMap.set('ApplyHoney', new TileModel('Apply cold liquid honey', 'assets/icon/assistance/honey.png'));
     this.assistancesMap.set('CoverWetWoundDressing', new TileModel('Cover with sterile wet wound dressing', 'assets/icon/assistance/bandage.png'));
-    this.assistancesMap.set('AloeVera', new TileModel('Apply aloe vera', ''));
-    this.assistancesMap.set('OpenBlisters', new TileModel('Open the blisters', ''));
-    this.assistancesMap.set('Butter', new TileModel('Apply butter', ''));
-    this.assistancesMap.set('Ice', new TileModel('Apply ice', ''));
+    this.assistancesMap.set('AloeVera', new TileModel('Apply aloe vera', 'assets/icon/assistance/aloe_vera.png'));
+    this.assistancesMap.set('OpenBlisters', new TileModel('Open the blisters', 'assets/icon/assistance/blisters.png'));
+    this.assistancesMap.set('Butter', new TileModel('Apply butter', 'assets/icon/assistance/butter.png'));
+    this.assistancesMap.set('Ice', new TileModel('Apply ice', 'assets/icon/assistance/iced.png'));
     this.assistancesMap.set('RemoveSting', new TileModel('Remove the sting', 'assets/icon/assistance/removal.png'));
-    this.assistancesMap.set('RinseSkin', new TileModel('Rinse the skin with water', ''));
+    this.assistancesMap.set('RinseSkin', new TileModel('Rinse the skin with water', 'assets/icon/assistance/rinse.png'));
     this.assistancesMap.set('CoolSkinIce', new TileModel('Cool the skin with ice', 'assets/icon/assistance/iced.png'));
-    this.assistancesMap.set('ScratchBite', new TileModel('Scratch the bite', ''));
-    this.assistancesMap.set('BurnSting', new TileModel('Burn the sting', ''));
-    this.assistancesMap.set('SuckVenom', new TileModel('Try to suck the venom out', ''));
-    this.assistancesMap.set('PersonNotMove', new TileModel('Tell the person not to move', ''));
-    this.assistancesMap.set('RinseVenomFromEyes', new TileModel('Rinse venom out of the eyes', ''));
-    this.assistancesMap.set('ImmobilizeBodypart', new TileModel('Immobilize/splint bodypart', ''));
-    this.assistancesMap.set('CatchSnake', new TileModel('Catch the snake', ''));
-    this.assistancesMap.set('SuckOrCutVenomOut', new TileModel('Suck or cut the venom out', ''));
-    this.assistancesMap.set('RubHerbs', new TileModel('Rub herbs on the bite', ''));
-    this.assistancesMap.set('PeeOnBite', new TileModel('Pee on the bite', ''));
-    this.assistancesMap.set('WashVenomAway', new TileModel('Wash away any venom', ''));
-    this.assistancesMap.set('CoolSkin', new TileModel('Cool the skin', ''));
-    this.assistancesMap.set('ImmobilizeSplintLimb', new TileModel('Immobilize/splint limb', ''));
-    this.assistancesMap.set('CatchScorpion', new TileModel('Catch the scorpion', ''));
-    this.assistancesMap.set('PeeOnSting', new TileModel('Pee on the sting', ''));
-    this.assistancesMap.set('DirectPressureBleeding', new TileModel('Apply direct pressure to stop the bleeding', ''));
-    this.assistancesMap.set('CoverWound', new TileModel('Cover the wound', ''));
-    this.assistancesMap.set('RinseWound', new TileModel('Rinse the wound', ''));
-    this.assistancesMap.set('DontStandBrokenLeg', new TileModel('Tell the person not to stand on a broken leg', ''));
-    this.assistancesMap.set('RaiseLeg', new TileModel('Raise the leg', ''));
-    this.assistancesMap.set('DislocatedLimb', new TileModel('Reset a dislocated limb', ''));
-    this.assistancesMap.set('ImmobilizeLimb', new TileModel('Immobilize the limb', ''));
+    this.assistancesMap.set('ScratchBite', new TileModel('Scratch the bite', 'assets/icon/assistance/scratch.png'));
+    this.assistancesMap.set('BurnSting', new TileModel('Burn the sting', 'assets/icon/assistance/burn.png'));
+    this.assistancesMap.set('SuckVenom', new TileModel('Try to suck the venom out', 'assets/icon/assistance/removal.png'));
+    this.assistancesMap.set('PersonNotMove', new TileModel('Tell the person not to move', 'assets/icon/assistance/dont.png'));
+    this.assistancesMap.set('RinseVenomFromEyes', new TileModel('Rinse venom out of the eyes', 'assets/icon/assistance/rinse_eye.png'));
+    this.assistancesMap.set('ImmobilizeBodypart', new TileModel('Immobilize/splint bodypart', 'assets/icon/assistance/immobilize.png'));
+    this.assistancesMap.set('CatchSnake', new TileModel('Catch the snake', 'assets/icon/assistance/snake.png'));
+    this.assistancesMap.set('SuckOrCutVenomOut', new TileModel('Suck or cut the venom out', 'assets/icon/assistance/removal.png'));
+    this.assistancesMap.set('RubHerbs', new TileModel('Rub herbs on the bite', 'assets/icon/assistance/herbs.png'));
+    this.assistancesMap.set('PeeOnBite', new TileModel('Pee on the bite', 'assets/icon/assistance/pee.png'));
+    this.assistancesMap.set('WashVenomAway', new TileModel('Wash away any venom', 'assets/icon/assistance/clean_wound.png'));
+    this.assistancesMap.set('CoolSkin', new TileModel('Cool the skin', 'assets/icon/assistance/iced.png'));
+    this.assistancesMap.set('ImmobilizeSplintLimb', new TileModel('Immobilize/splint limb', 'assets/icon/assistance/immobilize.png'));
+    this.assistancesMap.set('CatchScorpion', new TileModel('Catch the scorpion', 'assets/icon/assistance/scorpion.png'));
+    this.assistancesMap.set('PeeOnSting', new TileModel('Pee on the sting', 'assets/icon/assistance/pee.png'));
+    this.assistancesMap.set('DirectPressureBleeding', new TileModel('Apply direct pressure to stop the bleeding', 'assets/icon/assistance/apply_pressure.png'));
+    this.assistancesMap.set('CoverWound', new TileModel('Cover the wound', 'assets/icon/assistance/plaster.png'));
+    this.assistancesMap.set('RinseWound', new TileModel('Rinse the wound', 'assets/icon/assistance/rinse.png'));
+    this.assistancesMap.set('DontStandBrokenLeg', new TileModel('Tell the person not to stand on a broken leg', 'assets/icon/assistance/dont.png'));
+    this.assistancesMap.set('RaiseLeg', new TileModel('Raise the leg', 'assets/icon/assistance/elevate_limb.png'));
+    this.assistancesMap.set('DislocatedLimb', new TileModel('Reset a dislocated limb', 'assets/icon/assistance/reset_limb.png'));
+    this.assistancesMap.set('ImmobilizeLimb', new TileModel('Immobilize the limb', 'assets/icon/assistance/immobilize.png'));
     this.assistancesMap.set('CoolInjury', new TileModel('Cool the injury', 'assets/icon/assistance/iced.png'));
-    this.assistancesMap.set('PersonRest', new TileModel('Tell the person to rest', ''));
-    this.assistancesMap.set('MassageInjury', new TileModel('Massage the injury', ''));
-    this.assistancesMap.set('HeatInjury', new TileModel('Put heat on the injury', ''));
-    this.assistancesMap.set('HeadNeckStill', new TileModel('Keep the head and neck still', ''));
-    this.assistancesMap.set('WarmPerson', new TileModel('Keep the person warm', ''));
-    this.assistancesMap.set('MoveNeck', new TileModel('Ask the person to slowly start moving the neck again', ''));
-    this.assistancesMap.set('QuietPlace', new TileModel('Move the person to a quiet place', ''));
+    this.assistancesMap.set('PersonRest', new TileModel('Tell the person to rest', 'assets/icon/assistance/rest.png'));
+    this.assistancesMap.set('MassageInjury', new TileModel('Massage the injury', 'assets/icon/assistance/massage.png'));
+    this.assistancesMap.set('HeatInjury', new TileModel('Put heat on the injury', 'assets/icon/assistance/heat.png'));
+    this.assistancesMap.set('HeadNeckStill', new TileModel('Keep the head and neck still', 'assets/icon/assistance/head.png'));
+    this.assistancesMap.set('WarmPerson', new TileModel('Keep the person warm', 'assets/icon/assistance/cover_person.png'));
+    this.assistancesMap.set('MoveNeck', new TileModel('Ask the person to slowly start moving the neck again', 'assets/icon/assistance/neck.png'));
+    this.assistancesMap.set('QuietPlace', new TileModel('Move the person to a quiet place', 'assets/icon/assistance/move_person.png'));
     this.assistancesMap.set('CoverEyeLoosely', new TileModel('Loosely cover the eye', 'assets/icon/assistance/cover_eye.png'));
-    this.assistancesMap.set('HeadStill', new TileModel('Keep the head as still as possible', ''));
-    this.assistancesMap.set('PersonSit', new TileModel('Ask the person to sit', ''));
-    this.assistancesMap.set('RinseSpeckOut', new TileModel('Rinse the speck out of the eye', ''));
+    this.assistancesMap.set('HeadStill', new TileModel('Keep the head as still as possible', 'assets/icon/assistance/head.png'));
+    this.assistancesMap.set('PersonSit', new TileModel('Ask the person to sit', 'assets/icon/assistance/sit.png'));
+    this.assistancesMap.set('RinseSpeckOut', new TileModel('Rinse the speck out of the eye', 'assets/icon/assistance/rinse_eye.png'));
     this.assistancesMap.set('CoverEye', new TileModel('Cover the eye', 'assets/icon/assistance/cover_eye.png'));
     this.assistancesMap.set('CoolEye', new TileModel('Cool the eye', 'assets/icon/assistance/iced.png'));
-    this.assistancesMap.set('RawMeat', new TileModel('Put raw meat on the eye', ''));
+    this.assistancesMap.set('RawMeat', new TileModel('Put raw meat on the eye', 'assets/icon/assistance/raw_meat.png'));
     this.assistancesMap.set('RinseEye', new TileModel('Rinse the eye', 'assets/icon/assistance/rinse_eye.png'));
     this.assistancesMap.set('PinchNose', new TileModel('Ask the person to pinch his nose', 'assets/icon/assistance/pinch.png'));
-    this.assistancesMap.set('HeadForward', new TileModel('Tilt the head forwards', ''));
-    this.assistancesMap.set('CottonBall', new TileModel('Put a cotton ball in the nose', ''));
-    this.assistancesMap.set('HeadBackward', new TileModel('Tilt the head backwards', ''));
-    this.assistancesMap.set('WetClothForehead', new TileModel('Put a wet cloth on the forehead', ''));
+    this.assistancesMap.set('HeadForward', new TileModel('Tilt the head forwards', 'assets/icon/assistance/head.png'));
+    this.assistancesMap.set('CottonBall', new TileModel('Put a cotton ball in the nose', 'assets/icon/assistance/cotton_ball.png'));
+    this.assistancesMap.set('HeadBackward', new TileModel('Tilt the head backwards', 'assets/icon/assistance/head.png'));
+    this.assistancesMap.set('WetClothForehead', new TileModel('Put a wet cloth on the forehead', 'assets/icon/assistance/wet_cloth.png'));
     this.assistancesMap.set('LoosenClothing', new TileModel('Loosen tight clothing ', 'assets/icon/assistance/clothing.png'));
-    this.assistancesMap.set('PreventFalling', new TileModel('Prevent the person from falling', ''));
-    this.assistancesMap.set('RaiseLegs', new TileModel('Raise the legs', ''));
-    this.assistancesMap.set('WaterInFace', new TileModel('Throw some water in the face', ''));
-    this.assistancesMap.set('SlapShakePerson', new TileModel('Slap or shake the person', ''));
-    this.assistancesMap.set('DrinkCoffee', new TileModel('Let the person drink coffee', ''));
-    this.assistancesMap.set('PreventDehydration', new TileModel('Let the person drink lots of fluids', 'assets/icon/assistance/dehydration.png'));
-    this.assistancesMap.set('AntiFever', new TileModel('Give anti-fever medication', 'medication.png'));
+    this.assistancesMap.set('PreventFalling', new TileModel('Prevent the person from falling', 'assets/icon/assistance/falling.png'));
+    this.assistancesMap.set('RaiseLegs', new TileModel('Raise the legs', 'assets/icon/assistance/elevate_limb.png'));
+    this.assistancesMap.set('WaterInFace', new TileModel('Throw some water in the face', 'assets/icon/assistance/water.png'));
+    this.assistancesMap.set('SlapShakePerson', new TileModel('Slap or shake the person', 'assets/icon/assistance/slap.png'));
+    this.assistancesMap.set('DrinkCoffee', new TileModel('Let the person drink coffee', 'assets/icon/assistance/coffee.png'));
+    this.assistancesMap.set('PreventDehydration', new TileModel('Let the person drink lots of fluids', 'assets/icon/assistance/drink.png'));
+    this.assistancesMap.set('AntiFever', new TileModel('Give anti-fever medication', 'assets/icon/assistance/medication.png'));
     this.assistancesMap.set('Malaria', new TileModel('Find medical attention for malaria', 'assets/icon/assistance/malaria.png'));
-    this.assistancesMap.set('RubAlcohol', new TileModel('Rub alcohol on the skin', ''));
-    this.assistancesMap.set('ColdShower', new TileModel('Let the person take a cold bath or shower','' ));
-    this.assistancesMap.set('AreaSafe', new TileModel('Remove objects around the person', 'assets/icon/assistance/safe_area.png' ));
-    this.assistancesMap.set('LoosenClothingNeck', new TileModel('Loosen tight clothing around the neck', ''));
-    this.assistancesMap.set('HoldDown', new TileModel('Hold the person down', ''));
-    this.assistancesMap.set('PutInMouth', new TileModel('Put something in the mouth', ''));
-    this.assistancesMap.set('ZincTablets', new TileModel('Give the person zinc tablets', ''));
+    this.assistancesMap.set('RubAlcohol', new TileModel('Rub alcohol on the skin', 'assets/icon/assistance/alcohol.png'));
+    this.assistancesMap.set('ColdShower', new TileModel('Let the person take a cold bath or shower','assets/icon/assistance/cold_shower.png' ));
+    this.assistancesMap.set('AreaSafe', new TileModel('Remove objects around the person', 'assets/icon/assistance/removal.png' ));
+    this.assistancesMap.set('LoosenClothingNeck', new TileModel('Loosen tight clothing around the neck', 'assets/icon/assistance/clothing.png'));
+    this.assistancesMap.set('HoldDown', new TileModel('Hold the person down', 'assets/icon/assistance/push_down.png'));
+    this.assistancesMap.set('PutInMouth', new TileModel('Put something in the mouth', 'assets/icon/assistance/mouth.png'));
+    this.assistancesMap.set('ZincTablets', new TileModel('Give the person zinc tablets', 'assets/icon/assistance/zinc.png'));
     this.assistancesMap.set('Cholera', new TileModel('Find medical treatment for cholera', 'assets/icon/assistance/cholera.png'));
-    this.assistancesMap.set('DontDrink', new TileModel('Make sure the person doesn\'t drink', ''));
+    this.assistancesMap.set('DontDrink', new TileModel('Make sure the person doesn\'t drink', 'assets/icon/assistance/dont_drink.png'));
     this.assistancesMap.set('IsolateVictim', new TileModel('Keep the person away from other people/children', 'assets/icon/assistance/isolate.png'));
     this.assistancesMap.set('WaterOnEye', new TileModel('Dip lukewarm water onto the eyes', 'assets/icon/assistance/water_on_eye.png'));
-    this.assistancesMap.set('Stay24Hours', new TileModel('Keep someone with the person for 24 hours', ''));
-    this.assistancesMap.set('ImmobilizeHead', new TileModel('Immobilize the head', ''));
-    this.assistancesMap.set('ContinueActivities', new TileModel('Let the person continue their activities', ''));
-    this.assistancesMap.set('Awake24Hours', new TileModel('Keep the person awake for 24 hours', ''));
-    this.assistancesMap.set('SugarDrink', new TileModel('Give the person a sugary drink', ''));
-    this.assistancesMap.set('Dextrose', new TileModel('Give the person dextrose or glucose powder', ''));
-    this.assistancesMap.set('SmallSnack', new TileModel('Give the person a small snack', ''));
+    this.assistancesMap.set('Stay24Hours', new TileModel('Keep someone with the person for 24 hours', 'assets/icon/assistance/stay.png'));
+    this.assistancesMap.set('ImmobilizeHead', new TileModel('Immobilize the head', 'assets/icon/assistance/head.png'));
+    this.assistancesMap.set('ContinueActivities', new TileModel('Let the person continue their activities', 'assets/icon/assistance/continue.png'));
+    this.assistancesMap.set('Awake24Hours', new TileModel('Keep the person awake for 24 hours', 'assets/icon/assistance/clock.png'));
+    this.assistancesMap.set('SugarDrink', new TileModel('Give the person a sugary drink', 'assets/icon/assistance/sugary_drink.png'));
+    this.assistancesMap.set('Dextrose', new TileModel('Give the person dextrose or glucose powder', 'assets/icon/assistance/dextrose.png'));
+    this.assistancesMap.set('SmallSnack', new TileModel('Give the person a small snack', 'assets/icon/assistance/snack.png'));
     this.assistancesMap.set('CoverPersonBlanket', new TileModel('Cover the person with a blanket', 'assets/icon/assistance/cover_person.png' ));
     this.assistancesMap.set('DryClothes', new TileModel('Let the person put on warm dry clothes', 'assets/icon/assistance/clothing.png'));
-    this.assistancesMap.set('WarmSugeryDrink', new TileModel('Give the person a warm, sugary drink', ''));
-    this.assistancesMap.set('RewarmPerson', new TileModel('Use warm objects to actively rewarm the person', ''));
-    this.assistancesMap.set('DrinkAlcohol', new TileModel('Let the person drink alcohol', ''));
-    this.assistancesMap.set('HotShower', new TileModel('Let the person take a hot bath or shower', ''));
-    this.assistancesMap.set('CompressesArmsLegs', new TileModel('Put hot compresses to arms and legs', ''))
-    this.assistancesMap.set('MassagePerson', new TileModel('Massage or rub the person', ''));
-    this.assistancesMap.set('PersonOutOfHeat', new TileModel('Move the person out of the heat', ''));
+    this.assistancesMap.set('WarmSugeryDrink', new TileModel('Give the person a warm, sugary drink', 'assets/icon/assistance/hot_drink.png'));
+    this.assistancesMap.set('RewarmPerson', new TileModel('Use warm objects to actively rewarm the person', 'assets/icon/assistance/heat.png'));
+    this.assistancesMap.set('DrinkAlcohol', new TileModel('Let the person drink alcohol', 'assets/icon/assistance/drink_alcohol.png'));
+    this.assistancesMap.set('HotShower', new TileModel('Let the person take a hot bath or shower', 'assets/icon/assistance/hot_shower.png'));
+    this.assistancesMap.set('CompressesArmsLegs', new TileModel('Put hot compresses to arms and legs', 'assets/icon/assistance/hot_compress.png'))
+    this.assistancesMap.set('MassagePerson', new TileModel('Massage or rub the person', 'assets/icon/assistance/massage.png'));
+    this.assistancesMap.set('PersonOutOfHeat', new TileModel('Move the person out of the heat', 'assets/icon/assistance/move_person.png'));
     this.assistancesMap.set('RemoveExcessClothing', new TileModel('Remove excess clothing', 'assets/icon/assistance/clothing.png'));
     this.assistancesMap.set('CoolPerson', new TileModel('Cool the person immediately ', 'assets/icon/assistance/iced.png'));
     this.assistancesMap.set('DrinkCoolWater', new TileModel('Let the person drink cool water', 'assets/icon/assistance/drink.png'));
-  }
-
-  getTwoRandomAssistances(uniqueAssistances)
-  {
-    var result: string[] = [];
-
-    var allAssistances = Array.from(this.assistancesMap.keys());
-    var wrongAssistances = allAssistances.filter(x => !uniqueAssistances.includes(x));
-
-    if(wrongAssistances.length > 1)
-    {
-      var firstNumber = Math.round(Math.random() * wrongAssistances.length);
-      var secondNumber =  Math.round(Math.random() * wrongAssistances.length);
-      while(firstNumber === secondNumber) {
-        secondNumber =  Math.round(Math.random() * wrongAssistances.length);
-      }
-
-      result.push(wrongAssistances[firstNumber]);
-      result.push(wrongAssistances[secondNumber]);
-    }
-
-    return result;
   }
 
   prev(){
